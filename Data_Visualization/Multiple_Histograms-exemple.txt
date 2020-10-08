@@ -1,0 +1,39 @@
+DIFFERENT PLOT TYPES
+Multiple Histograms
+If we want to compare two different distributions, we can put multiple histograms on the same plot. This could be useful, for example, in comparing the heights of a bunch of men and the heights of a bunch of women. However, it can be hard to read two histograms on top of each other. For example, in this histogram, we can’t see all of the blue plot, because it’s covered by the orange one:
+
+overlap_hist
+
+We have two ways we can solve a problem like this:
+
+use the keyword alpha, which can be a value between 0 and 1. This sets the transparency of the histogram. A value of 0 would make the bars entirely transparent. A value of 1 would make the bars completely opaque.
+
+plt.hist(a, range=(55, 75), bins=20, alpha=0.5)
+plt.hist(b, range=(55, 75), bins=20, alpha=0.5)
+This would make both histograms visible on the plot:alpha_histograms
+
+use the keyword histtype with the argument 'step' to draw just the outline of a histogram:
+
+plt.hist(a, range=(55, 75), bins=20, histtype='step')
+plt.hist(b, range=(55, 75), bins=20, histtype='step')
+which results in a chart like:step_histogram
+
+Another problem we face is that our histograms might have different numbers of samples, making one much bigger than the other. We can see how this makes it difficult to compare qualitatively, by adding a dataset b with a much bigger size value:
+
+a = normal(loc=64, scale=2, size=10000)
+b = normal(loc=70, scale=2, size=100000)
+
+plt.hist(a, range=(55, 75), bins=20)
+plt.hist(b, range=(55, 75), bins=20)
+plt.show()
+The result is two histograms that are very difficult to compare:different_hist
+
+To solve this, we can normalize our histograms using normed=True. This command divides the height of each column by a constant such that the total shaded area of the histogram sums to 1.
+
+a = normal(loc=64, scale=2, size=10000)
+b = normal(loc=70, scale=2, size=100000)
+
+plt.hist(a, range=(55, 75), bins=20, alpha=0.5, normed=True)
+plt.hist(b, range=(55, 75), bins=20, alpha=0.5, normed=True)
+plt.show()
+Now, we can more easily see the differences between the blue set and the orange set:

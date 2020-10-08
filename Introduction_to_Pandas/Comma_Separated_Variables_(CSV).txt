@@ -1,0 +1,10 @@
+#You run a cupcake store and want to create a record of all of the cupcakes that you offer.
+#Write the following data as a CSV in cupcakes.csv.
+#The first row should contain the column names:
+#name,cake_flavor,frosting_flavor,topping
+#Note that there are no spaces between the commas.
+
+name,cake_flavor,frosting_flavor,topping
+Chocolate Cake,chocolate,chocolate,chocolate shavings
+Birthday Cake,vanilla,vanilla,rainbow sprinkles
+Carrot cake,carrot,cream cheese,almonds
