@@ -1,0 +1,24 @@
+HYPOTHESIS TESTING
+Types of Hypothesis Tests
+When trying to estimate something based on sample(s) from a larger population of interest, it is important to formulate specific questions and then quantify uncertainty about the answers. Some situations involve numerical data:
+
+a professor expects an exam average to be roughly 75%, and wants to know if the actual scores line up with this expectation. Was the test actually too easy or too hard?
+a manager of a chain of stores wants to know if certain locations have different revenues on different days of the week. Are the revenue differences a result of natural fluctuations or a significant difference between the stores’ sales patterns?
+a PM for a website wants to compare the time spent on different versions of a homepage. Does one version make users stay on the page significantly longer?
+Others involve categorical data, such as:
+
+a pollster wants to know if men and women have significantly different yogurt flavor preferences. Does a result where men more often answer “chocolate” as their favorite reflect a significant difference in the population?
+do different age groups have significantly different emotional reactions to different ads?
+In this lesson, you will learn how about how we can use hypothesis testing to help answer these questions. There are several different types of hypothesis tests for the various scenarios you may encounter. Luckily, SciPy has built-in functions that perform all of these tests for us, normally using just one line of code.
+
+For numerical data, we will cover:
+
+One Sample T-Tests
+Two Sample T-Tests
+ANOVA
+Tukey Tests
+For categorical data, we will cover:
+
+Binomial Tests
+Chi Square
+After this lesson, you will have a wide range of tools in your arsenal to answer questions about your data.
