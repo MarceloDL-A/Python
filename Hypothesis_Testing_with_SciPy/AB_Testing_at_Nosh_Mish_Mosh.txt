@@ -1,0 +1,103 @@
+"""
+HYPOTHESIS TESTING WITH SCIPY
+A/B Testing at Nosh Mish Mosh
+The Nosh Mish Mosh is a recipe and ingredient meal delivery service. We ship the raw materials and you get to cook it at your home! We've decided to hire a data analyst to help them make product and interface decisions. Get started and we'll be able to judge the amount of data we'll need for these differences to be meaningful.
+"""
+"""
+We've collected customer data for the past week and exposed it through a Python library, so first import noshmishmosh.
+"""
+import noshmishmosh as ns
+
+"""
+Next, we'll need to do a little bit of data analysis - let's use numpy to help. Import numpy into your workspace.
+"""
+import numpy as np
+
+"""
+A/B Testing at Nosh Mish Mosh
+Nosh Mish Mosh wants to run an experiment to see if we can convince more people to purchase meal plans if we use a more artisanal-looking vegetable selection. We've photographed these modern meals with blush tomatoes and graffiti eggplants, but aren't sure if this strategy will sell enough units to benefit from establishing a business relationship with a new provider.
+
+Before running this experiment, of course, we need to know how many people have to see the new assets. We don't want customers seeing food that we won't end up offering. Of course, there are three things we need to know before we determine that number.
+
+the Baseline
+the Minimum Detectable Effect
+and the Statistical Significance
+"""
+"""
+Let's get the ball rolling on finding those numbers! In order to get our baseline, we need to first know how many users visited the site. Let's grab that logged information, which is stored in noshmishmosh.customer_visits. Assign that to a new variable called all_visitors.
+"""
+all_visitors = ns.customer_visits
+#print("all_visitors: \n" + str(all_visitors))
+
+"""
+Next we need to know how many visitors to the site ultimately end up buying a meal or set of meals from Nosh Mish Mosh. We have that information saved into purchasing_customers field on noshmishmosh. Save that information into a variable called paying_visitors.
+"""
+paying_visitors = ns.purchasing_customers
+print("paying_visitors: \n" + str(paying_visitors))
+
+"""
+Calculate the lengths of the two lists, saving the results into variables called total_visitor_count and paying_visitor_count, respectively.
+"""
+total_visitor_count = len(all_visitors)
+paying_visitor_count = len(paying_visitors)
+print("total_visitor_count: \n" + str(total_visitor_count))
+#print("paying_visitor_count: \n" + str(paying_visitor_count))
+
+"""
+Now to get the baseline: since we want a percentage as our answer, multiply the number of purchasing visitors by 100.0. Then divide that by the number of total visitors. Save the result in a variable called baseline_percent.
+"""
+baseline_percent = 100.0*paying_visitor_count/total_visitor_count
+print("baseline_percent: \n" + str(baseline_percent))
+
+"""
+Mish Mosh B'Gosh: the Minimum Detectable Effect
+These rainbow fingerling potatoes don't come cheap. We'd like to know for sure that we'll be pulling in at least $1240 more every week. In order to figure out how many more customers we need we'll have to investigate the average revenue generated from a given sale. Luckily we have a list of the money spent by each customer in noshmishmosh.money_spent. Save that list into a variable called payment_history.
+"""
+payment_history = ns.money_spent
+print("payment_history: \n" + str(payment_history))
+average_payment = np.mean(payment_history)
+print("average_payment: \n" + str(average_payment))
+
+"""
+We want to know how many of these "usual" payments it would take to clear our $1240 mark. Round the number up using np.ceil (because that's how many new customers it takes to bring in more than $1240). Save that value into a new_customers_needed variable.
+"""
+new_customers_needed = np.ceil(1240/average_payment)
+print("new_customers_needed: \n" + str(new_customers_needed))
+
+"""
+Now find the percent lift required by multiplying the number of customers by 100.0 and dividing the result by the total visitor count ascertained earlier. Save the result in a variable called percentage_point_increase. Print percentage_point_increase to see what it is.
+"""
+percentage_point_increase = (new_customers_needed*100.0)/total_visitor_count
+print("percentage_point_increase: \n" + str(percentage_point_increase))
+
+"""
+In order to find our minimum detectable effect, we need to express percentage_point_increase as a percent of baseline_percent. You can do this by dividing percentage_point_increase by baseline_percent and multiplying by 100.0.
+
+Store the results in a variable called minimum_detectable_effect.
+"""
+minimum_detectable_effect = (100.0*percentage_point_increase)/baseline_percent
+
+"""
+Print out the result minimum_detectable_effect.
+"""
+print("minimum_detectable_effect: \n" + str(minimum_detectable_effect))
+
+"""
+Nosh Mish Mosh: Tying It All Together
+
+
+The last thing we need to calculate the sample size for Nosh Mish Mosh's artisanal rebranding is our statistical significance. We'd like to be fairly certain, but this isn't going to be a million dollar decision, so let's go with 90%.
+"""
+"""
+
+Baseline conversion rate:	
+
+
+Now put it all together! Puch the baseline, the minimum detectable effect, and the statistical significance into the calculator and evaluate how many people need to be shown the new assets before we can check if the results are a significant improvement. Save the results in a variable called ab_sample_size.
+18.6%
+Statistical significance:	
+Minimum detectable effect:	
+50.54%
+Sample size:	290
+"""
+ab_sample_size = 290
