@@ -1,0 +1,134 @@
+"""
+DATA CLEANING WITH PANDAS
+Introduction
+A huge part of data science involves acquiring raw data and getting it into a form ready for analysis. Some have estimated that data scientists spend 80% of their time cleaning and manipulating data, and only 20% of their time actually analyzing it or building models from it.
+
+When we receive raw data, we have to do a number of things before we’re ready to analyze it, possibly including:
+
+diagnosing the “tidiness” of the data — how much data cleaning we will have to do
+reshaping the data — getting right rows and columns for effective analysis
+combining multiple files
+changing the types of values — how we fix a column where numerical values are stored as strings, for example
+dropping or filling missing values - how we deal with data that is incomplete or missing
+manipulating strings to represent the data better
+We will go through the techniques data scientists use to accomplish these goals by looking at some “unclean” datasets and trying to get them into a good, clean state.
+"""
+"""
+We have provided an example of data representing exam scores from 1000 students in an online math class.
+
+These DataFrames are hard to work with. They’re separated into multiple tables, and the values don’t lend themselves well to analysis. Try to think about how you would plot the exam score average against the age of the students in the class. This would not be easy!
+
+In the next exercises, we’ll transform this data so that performing a task like that visualization would be simple.
+"""
+import codecademylib3_seaborn
+import pandas as pd
+
+students0 = pd.read_csv("file0.csv")
+students1 = pd.read_csv("file1.csv")
+
+print(students0)
+
+"""
+print(students0) should return:
+Unnamed: 0	full_name	gender_age	Fractions	Probability	grade
+0	0	Barrett Feragh	M14	76%	72%	9th grade
+1	1	Llewellyn Keech	M14	83%	87%	12th grade
+2	2	Delilah Sowthcote	F16	90%	79%	10th grade
+3	3	Terrell Geri	M15	80%	86%	11th grade
+4	4	Gram Hallewell	M14	67%	78%	10th grade
+5	5	Stephana Boots	F18	74%	85%	9th grade
+6	6	Adrianne Bamfield	F14	91%	75%	11th grade
+7	7	Glynnis Eglise	F18	84%	74%	10th grade
+8	8	Ronnica Cough	F15	77%	84%	9th grade
+9	9	Kenyon Brisland	M18	68%	91%	12th grade
+10	10	Sherman Holdforth	M18	79%	69%	10th grade
+11	11	Zeke Marson	M14	73%	69%	10th grade
+12	12	Alexis Selbie	F17	61%	84%	12th grade
+13	13	Harcourt Bratton	M14	73%	76%	10th grade
+14	14	Cully Sandbatch	M16	65%	88%	9th grade
+15	15	Stephan Dufore	M14	84%	77%	10th grade
+16	16	Allayne Lettley	M15	69%	81%	10th grade
+17	17	Jamima Loweth	F16	74%	90%	12th grade
+18	18	Basil Choulerton	M18	63%	80%	12th grade
+19	19	Carmine Dewitt	M17	79%	83%	9th grade
+20	20	Gretna Ashborne	F16	84%	78%	11th grade
+21	21	L;urette Preskett	F15	73%	85%	11th grade
+22	22	Thorvald Slograve	M18	84%	88%	11th grade
+23	23	Averil Petheridge	F16	78%	88%	10th grade
+24	24	Reece Haslam	M15	71%	67%	11th grade
+25	25	Rudolfo Welsby	M18	80%	75%	9th grade
+26	26	Page Vooght	F15	77%	77%	12th grade
+27	27	Charo Feragh	F18	79%	79%	9th grade
+28	28	Carmine Henriet	M18	78%	86%	9th grade
+29	29	Ado Hawlgarth	M16	63%	82%	10th grade
+30	30	Catlee Ilem	F15	51%	87%	9th grade
+31	31	Ursulina Robrow	F16	71%	83%	9th grade
+32	32	Garald Cawker	M15	73%	86%	10th grade
+33	33	Maxwell Dilliway	M16	71%	75%	10th grade
+34	34	Taite Kochel	M15	77%	82%	11th grade
+35	35	Porty Golding	M16	65%	85%	9th grade
+36	36	Mortie Bulmer	M15	67%	68%	9th grade
+37	37	Nadine Batteson	F14	71%	82%	11th grade
+38	38	Deloria Kerin	F15	60%	82%	11th grade
+39	39	Fremont MacInerney	M18	73%	92%	11th grade
+40	40	Lou Nelissen	M16	66%	82%	12th grade
+41	41	Elicia O'Meara	F17	71%	77%	12th grade
+42	42	Grantley Ruffey	M18	62%	78%	10th grade
+43	43	Lea Morigan	F18	74%	77%	10th grade
+44	44	Arleen Loveless	F18	81%	80%	9th grade
+45	45	Neille Wontner	F18	83%	91%	10th grade
+46	46	Augustus Caird	M14	72%	81%	9th grade
+47	47	Westbrook Celloni	M15	65%	82%	11th grade
+48	48	Granny Duligall	M15	79%	77%	9th grade
+49	49	Oran Reide	M18	85%	75%	9th grade
+50	50	Arleen MacAiline	F17	85%	86%	11th grade
+51	51	Caron Abthorpe	F14	82%	81%	10th grade
+52	52	Uri Birchenough	M14	71%	81%	9th grade
+53	53	Adelbert Pigot	M17	80%	76%	12th grade
+54	54	Vale Glanders	M14	81%	78%	12th grade
+55	55	Duane Gewer	M16	57%	81%	9th grade
+56	56	Carroll Cocksedge	M16	78%	84%	9th grade
+57	57	Mureil Doy	F15	60%	78%	9th grade
+58	58	Emelita Keggin	F17	71%	87%	9th grade
+59	59	Murielle Gartshore	F18	75%	79%	11th grade
+60	60	Kellen Litzmann	F17	70%	87%	11th grade
+61	61	Bentlee Mangeney	M17	75%	83%	10th grade
+62	62	Sid Vogl	M14	72%	88%	11th grade
+63	63	Dorella Alden	F17	77%	81%	9th grade
+64	64	Claudia Bever	F18	68%	81%	9th grade
+65	65	Phyllys Arnaudon	F18	62%	85%	11th grade
+66	66	Kevina Margrie	F17	62%	83%	11th grade
+67	67	Jolyn Noore	F15	70%	85%	11th grade
+68	68	Felizio Brittoner	M14	70%	77%	12th grade
+69	69	Christean Rollitt	F14	66%	84%	12th grade
+70	70	Sergeant Witherow	M15	69%	89%	11th grade
+71	71	Sharleen Broadey	F15	80%	81%	10th grade
+72	72	Deeann Duckworth	F16	71%	83%	10th grade
+73	73	Gerry Rangall	F15	74%	74%	12th grade
+74	74	Nissy Ogglebie	F14	77%	82%	12th grade
+75	75	Colver de Copeman	M18	85%	86%	10th grade
+76	76	Pammi Swaby	F14	56%	75%	11th grade
+77	77	Niels Lean	M17	77%	74%	9th grade
+78	78	Ali Ling	F17	71%	78%	12th grade
+79	79	Ode Evamy	M15	88%	80%	12th grade
+80	80	Claudetta Tyne	F17	79%	95%	12th grade
+81	81	Jennilee Megroff	F14	85%	79%	12th grade
+82	82	Sauveur Grouen	M15	62%	87%	9th grade
+83	83	Price Pallister	M14	58%	76%	12th grade
+84	84	Corabelle Zaniolo	F15	67%	76%	12th grade
+85	85	Ker Tween	M18	87%	84%	12th grade
+86	86	Norton Coleford	M15	80%	74%	11th grade
+87	87	Bonny Bartoszewicz	F16	90%	89%	12th grade
+88	88	Winonah Le-Good	F18	84%	84%	9th grade
+89	89	Lodovico Backhurst	M14	79%	88%	12th grade
+90	90	Bart Parres	M17	87%	77%	9th grade
+91	91	Jami Milam	F15	63%	76%	11th grade
+92	92	Merlina Aleshintsev	F16	50%	86%	11th grade
+93	93	Elysia Rime	F14	73%	89%	11th grade
+94	94	Lovell Coolican	M18	70%	84%	11th grade
+95	95	Halley Clunie	F14	73%	82%	12th grade
+96	96	Gale Mullender	F17	72%	81%	12th grade
+97	97	Ryun Denne	M17	74%	78%	11th grade
+98	98	Cazzie Potapczuk	M14	71%	78%	10th grade
+99	99	Verina Pasque	F18	48%	77%	10th grade
+"""
