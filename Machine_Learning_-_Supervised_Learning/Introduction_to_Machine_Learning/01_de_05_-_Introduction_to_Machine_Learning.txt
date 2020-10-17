@@ -1,0 +1,16 @@
+WHY USE MACHINE LEARNING?
+Introduction to Machine Learning
+The year is 2049…
+
+Neo York is overrun by bots and web crawlers. The capabilities of Machine Learning have reached new heights and the world as we know it will never be the same.
+
+Facial recognition technology that helps users tag and share photos of friends can now tag future friends; night drones are on the prowl.
+
+Machine learning powered self-driving cars (and flying cars) are now massively available to consumers. The steering wheel has become a thing of the past.
+
+Recommendation engines that suggest what VR shows to watch and what products to buy will now display a different environment for each user group.
+
+At the dawn of a new age, you can’t help but wonder, what is Machine Learning and how did it pivot our world so drastically?
+
+Instructions
+In this lesson, you will get an introduction to this discipline of Computer Science that enabled these technology advances.
