@@ -1,0 +1,43 @@
+LINEAR REGRESSION
+Introduction to Linear Regression
+The purpose of machine learning is often to create a model that explains some real-world data, so that we can predict what may happen next, with different inputs.
+
+The simplest model that we can fit to data is a line. When we are trying to find a line that fits a set of data best, we are performing Linear Regression.
+
+We often want to find lines to fit data, so that we can predict unknowns. For example:
+
+The market price of a house vs. the square footage of a house. Can we predict how much a house will sell for, given its size?
+The tax rate of a country vs. its GDP. Can we predict taxation based on a country’s GDP?
+The amount of chips left in the bag vs. number of chips taken. Can we predict how much longer this bag of chips will last, given how much people at this party have been eating?
+Imagine that we had this set of weights plotted against heights of a large set of professional baseball players:
+
+heights vs weights
+
+To create a linear model to explain this data, we might draw this line:
+
+heights vs weights
+
+Now, if we wanted to estimate the weight of a player with a height of 73 inches, we could estimate that it is around 143 pounds.
+
+A line is a rough approximation, but it allows us the ability to explain and predict variables that have a linear relationship with each other. In the rest of the lesson, we will learn how to perform Linear Regression.
+
+Instructions
+1.
+Run the code in script.py.
+
+This shows Sandra’s lemonade stand’s revenue over its first 12 months of being open.
+
+
+Hint
+The code is already written for you in the text editor. Just click Run and a visualization should appear on the right.
+
+We used Matplotlib library to plot the months and revenue.
+
+2.
+From eyeballing the graph, what do you think the revenue in month 13 would be?
+
+Enter your approximate answer as an integer in a variable called month_13.
+
+
+Hint
+Month 13’s revenue is probably going to land somewhere between $190 and $200.

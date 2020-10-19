@@ -1,0 +1,43 @@
+LINEAR REGRESSION
+Use Your Functions on Real Data
+We have constructed a way to find the “best” b and m values using gradient descent! Let’s try this on the set of baseball players’ heights and weights that we saw at the beginning of the lesson.
+
+Instructions
+1.
+Run the code in script.py.
+
+This is a scatterplot of weight vs height.
+
+2.
+We have imported your gradient_descent() function. Call it with parameters:
+
+X
+y
+num_iterations of 1000
+learning_rate of 0.0001
+Store the result in variables called b and m.
+
+
+Hint
+Note that the X is uppercase. This is a common convention.
+
+It should look something like:
+
+b, m = gradient_descent(_, _, num_iterations=1000, learning_rate=______)
+3.
+Create a list called y_predictions. Set it to be every element of X multiplied by m and added to b.
+
+The easiest way to do this would be a list comprehension:
+
+new_y = [element*slope + intercept for element in y]
+
+Hint
+List comprehensions provide a concise way to create lists.
+
+Your code should look like:
+
+y_predictions = [m*x + b for x in X]
+4.
+Plot X vs y_predictions on the same plot as the scatterplot.
+
+Does the line look right?

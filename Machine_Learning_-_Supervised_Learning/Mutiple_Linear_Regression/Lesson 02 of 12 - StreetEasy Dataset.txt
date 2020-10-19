@@ -1,0 +1,69 @@
+MULTIPLE LINEAR REGRESSION
+StreetEasy Dataset (https://streeteasy.com/)
+StreetEasy Logo
+
+StreetEasy is New York City’s leading real estate marketplace — from studios to high-rises, Brooklyn Heights to Harlem.
+
+In this lesson, you will be working with a dataset that contains a sample of 5,000 rentals listings in Manhattan, Brooklyn, and Queens, active on StreetEasy in June 2016.
+
+It has the following columns:
+
+rental_id: rental ID
+rent: price of rent in dollars
+bedrooms: number of bedrooms
+bathrooms: number of bathrooms
+size_sqft: size in square feet
+min_to_subway: distance from subway station in minutes
+floor: floor number
+building_age_yrs: building’s age in years
+no_fee: does it have a broker fee? (0 for fee, 1 for no fee)
+has_roofdeck: does it have a roof deck? (0 for no, 1 for yes)
+has_washer_dryer: does it have washer/dryer in unit? (0/1)
+has_doorman: does it have a doorman? (0/1)
+has_elevator: does it have an elevator? (0/1)
+has_dishwasher: does it have a dishwasher (0/1)
+has_patio: does it have a patio? (0/1)
+has_gym: does the building have a gym? (0/1)
+neighborhood: (ex: Greenpoint)
+borough: (ex: Brooklyn)
+More information about this dataset can be found in the StreetEasy Dataset article.
+
+Let’s start by doing exploratory data analysis to understand the dataset better. We have broken the dataset (https://www.codecademy.com/content-items/d19f2f770877c419fdbfa64ddcc16edc) for you into:
+
+manhattan.csv (https://raw.githubusercontent.com/Codecademy/datasets/master/streeteasy/manhattan.csv)
+brooklyn.csv (https://raw.githubusercontent.com/Codecademy/datasets/master/streeteasy/brooklyn.csv)
+queens.csv (https://raw.githubusercontent.com/Codecademy/datasets/master/streeteasy/queens.csv)
+Instructions
+1.
+First, pick a borough out of the three (Manhattan, Brooklyn, and Queens) that you are most interested in!
+
+We are going to import the dataset and store it in a variable called df.
+
+To import, we will need to run this snippet:
+
+pd.read_csv("path")
+Replace path with one of the three URL’s above.
+
+
+Hint
+For example, if you want to take a look at the Manhattan data:
+
+df = pd.read_csv("https://raw.githubusercontent.com/Codecademy/datasets/master/streeteasy/manhattan.csv")
+Each dataset is going to be very different from the others. In this lesson, you are going to pick one of them!
+
+And now we have a DataFrame named df.
+
+A DataFrame is a 2-dimensional labeled data structure with columns of potentially different types. You can think of it like a spreadsheet or a SQL table. It is generally the most commonly used pandas object.
+
+Different Boroughs
+2.
+Let’s take a look at the first few rows using df.head():
+
+How far is the apartment in the third row from a subway station?
+Which neighborhood is it in?
+
+Hint
+print(df.head())
+A table should appear on the right panel with column names and 5 rows of apartments.
+
+The answers to these questions depend on the borough that you picked!

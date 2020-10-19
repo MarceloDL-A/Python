@@ -1,0 +1,94 @@
+MULTIPLE LINEAR REGRESSION
+Training Set vs. Test Set
+As with most machine learning algorithms, we have to split our dataset into:
+
+Training set: the data used to fit the model
+Test set: the data partitioned away at the very start of the experiment (to provide an unbiased evaluation of the model)
+Training Set vs. Testing Set
+
+In general, putting 80% of your data in the training set and 20% of your data in the test set is a good place to start.
+
+Suppose you have some values in x and some values in y:
+
+from sklearn.model_selection import train_test_split
+
+x_train, x_test, y_train, y_test = train_test_split(x, y, train_size=0.8, test_size=0.2)
+Here are the parameters:
+
+train_size: the proportion of the dataset to include in the train split (between 0.0 and 1.0)
+test_size: the proportion of the dataset to include in the test split (between 0.0 and 1.0)
+random_state: the seed used by the random number generator [optional]
+To learn more, here is a Training Set vs Validation Set vs Test Set article (https://www.codecademy.com/articles/training-set-vs-validation-set-vs-test-set).
+
+Instructions
+1.
+Import train_test_split from sklearn.model_selection.
+
+
+Hint
+Here, we are importing the train_test_split from scikit-learn’s model_selection module:
+
+from sklearn.model_selection import train_test_split
+2.
+Create a DataFrame x that selects the following columns from the main df DataFrame:
+
+'bedrooms'
+'bathrooms'
+'size_sqft'
+'min_to_subway'
+'floor'
+'building_age_yrs'
+'no_fee'
+'has_roofdeck'
+'has_washer_dryer'
+'has_doorman'
+'has_elevator'
+'has_dishwasher'
+'has_patio'
+'has_gym'
+Create a DataFrame y that selects the rent column from the main df DataFrame.
+
+These are the columns we want to use for our regression model.
+
+
+Hint
+To select columns from a DataFrame:
+
+name = df[['Column1', 'Column2']]
+So it should look something like:
+
+x = df[['bedrooms', 'bathrooms', 'size_sqft', 'min_to_subway', 'floor', 'building_age_yrs', 'no_fee', 'has_roofdeck', 'has_washer_dryer', 'has_doorman', 'has_elevator', 'has_dishwasher', 'has_patio', 'has_gym']]
+
+y = df[['rent']]
+3.
+Use scikit-learn’s train_test_split() method to split x into 80% training set and 20% testing set and generate:
+
+x_train
+x_test
+y_train
+y_test
+Set the random_state to 6.
+
+
+Hint
+x_train, x_test, y_train, y_test = train_test_split(x, y, train_size = 0.8, test_size = 0.2, random_state=6)
+4.
+Let’s take a look at the shapes of x_train, x_test, y_train, and y_test to see we got the proportion we wanted.
+
+We have 14 features that we’re looking for for each apartment, and 1 label we’re looking for for each apartment.
+
+
+Hint
+The .shape attribute for NumPy arrays returns the dimensions of the array. If array has n rows × m columns, then array.shape returns (n, m).
+
+print(x_train.shape)
+print(x_test.shape)
+
+print(y_train.shape)
+print(y_test.shape)
+For the Manhattan data, this results in:
+
+(2831, 14)
+(708, 14)
+(2831, 1)
+(708, 1)

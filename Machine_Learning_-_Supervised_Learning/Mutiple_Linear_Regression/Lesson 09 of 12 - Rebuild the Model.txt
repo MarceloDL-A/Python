@@ -1,0 +1,33 @@
+MULTIPLE LINEAR REGRESSION
+Rebuild the Model
+Now let’s rebuild the model using the new features as well as evaluate the new model to see if we improved!
+
+For Manhattan, the scores returned:
+
+Train score: 0.772546055982
+Test score:  0.805037197536
+For Brooklyn, the scores returned:
+
+Train score: 0.613221453798
+Test score:  0.584349923873
+For Queens, the scores returned:
+
+Train score: 0.665836031009
+Test score:  0.665170319781
+For whichever borough you used, let’s see if we can improve these scores!
+
+Instructions
+1.
+Print the coefficients again to see which ones are strongest.
+
+2.
+Currently the x should look something like:
+
+x = df[['bedrooms', 'bathrooms', 'size_sqft', 'min_to_subway', 'floor', 'building_age_yrs', 'no_fee', 'has_roofdeck', 'has_washer_dryer', 'has_doorman', 'has_elevator', 'has_dishwasher', 'has_patio', 'has_gym']]
+Remove some of the features that don’t have strong correlations and see if your scores improved!
+
+Post your best model in the Slack channel!
+
+
+Hint
+There is no right answer! Try building a model using different features!

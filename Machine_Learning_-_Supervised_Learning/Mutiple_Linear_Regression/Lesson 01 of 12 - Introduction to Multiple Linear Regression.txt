@@ -1,0 +1,46 @@
+MULTIPLE LINEAR REGRESSION
+Introduction to Multiple Linear Regression
+Linear regression is useful when we want to predict the values of a variable from its relationship with other variables. There are two different types of linear regression models (simple linear regression and multiple linear regression).
+
+In predicting the price of a home, one factor to consider is the size of the home. The relationship between those two variables, price and size, is important, but there are other variables that factor in to pricing a home: location, air quality, demographics, parking, and more. When making predictions for price, our dependent variable, we’ll want to use multiple independent variables. To do this, we’ll use Multiple Linear Regression.
+
+Multiple Linear Regression uses two or more independent variables to predict the values of the dependent variable. It is based on the following equation that we’ll explore later on:
+
+y = b + m_{1}x_{1} + m_{2}x_{2} + ... + m_{n}x_{n}y=b+m 
+1
+?	 x 
+1
+?	 +m 
+2
+?	 x 
+2
+?	 +...+m 
+n
+?	 x 
+n
+?	 
+StreetEasy Dataset
+
+You’ll learn multiple linear regression by performing it on this dataset. It contains information about apartments in New York.
+
+Instructions
+1.
+Before we start digging into the StreetEasy data, add this line at the end of script.py:
+
+plt.show()
+And then press run to see the graph!
+
+In this example, we used size (ft²) and building age (years) as independent variables to predict the rent ($).
+
+When we have two independent variables, we can create a linear regression plane. We can now guess what the rent is by plugging in the independent variables and finding where they lie on the plane.
+
+Checkpoint 2 Passed
+
+Hint
+Don’t worry if you don’t quite understand the model just yet!
+
+When we are looking at relationships, the independent variables are what you change. The dependent variable is what you measure. So, if we are looking at the way soil quality and watering frequency affects the height of a house plant, the independent variables would be:
+
+Soil quality
+Watering frequency
+The dependent variable would be height.

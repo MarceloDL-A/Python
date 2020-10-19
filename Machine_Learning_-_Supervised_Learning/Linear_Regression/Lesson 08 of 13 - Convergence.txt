@@ -1,0 +1,29 @@
+LINEAR REGRESSION
+Convergence
+How do we know when we should stop changing the parameters m and b? How will we know when our program has learned enough?
+
+To answer this, we have to define convergence. Convergence is when the loss stops changing (or changes very slowly) when parameters are changed.
+
+Hopefully, the algorithm will converge at the best values for the parameters m and b.
+
+Instructions
+1.
+Run the file. Look at the graph. This graph shows how much the parameter b changed with each iteration of a gradient descent runner.
+
+2.
+How many iterations did it take for this program to converge?
+
+Enter your answer in a variable called num_iterations.
+
+
+Hint
+Around 800.
+
+3.
+At what b value did this program converge?
+
+Enter your answer in a variable called convergence_b.
+
+
+Hint
+Around 47.

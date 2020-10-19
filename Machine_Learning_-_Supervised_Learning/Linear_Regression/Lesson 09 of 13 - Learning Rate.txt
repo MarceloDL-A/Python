@@ -1,0 +1,40 @@
+LINEAR REGRESSION
+Learning Rate
+We want our program to be able to iteratively learn what the best m and b values are. So for each m and b pair that we guess, we want to move them in the direction of the gradients we’ve calculated. But how far do we move in that direction?
+
+We have to choose a learning rate, which will determine how far down the loss curve we go.
+
+A small learning rate will take a long time to converge — you might run out of time or cycles before getting an answer. A large learning rate might skip over the best value. It might never converge! Oh no!
+
+
+Finding the absolute best learning rate is not necessary for training a model. You just have to find a learning rate large enough that gradient descent converges with the efficiency you need, and not so large that convergence never happens.
+
+Instructions
+1.
+We have imported two new lists representing how the b value changed with different learning rates:
+
+bs_000000001: 1400 iterations of gradient descent on b with a learning rate of 0.000000001
+bs_01: 100 iterations of gradient descent on b with a learning rate of 0.01
+Change the plot to plot bs_000000001 instead of bs.
+
+Does the gradient descent algorithm still converge to the same b value? Does it converge at all? Look at the values on the y-axis!
+
+
+Hint
+The line should now read:
+
+plt.plot(iterations, bs_000000001)
+This learning rate is far too small! The b value is still changing with each iteration, and has not reached a plateau. Whereas our other learning rate reached an answer at 1400 iterations (or before!), this one barely reached 0.00035 as a guess for b, which we know is far from the value of 48.5 that the other learning rate converged to.
+
+2.
+Change the plot to plot bs_01 instead of bs_000000001. Unfortunately, our computers blew up after 100 iterations of this, so you’ll also have to change the number of iterations to 100 instead of 1400:
+
+iterations = range(100)
+Does the gradient descent algorithm still converge to the same b value? Does it converge at all?
+
+
+Hint
+The line should now read:
+
+plt.plot(iterations, bs_01)
+This learning rate is far too large! The b value changed way too much with each iteration, and quickly blew up to 1e192. That’s a 1 with 192 zeros after it. Whereas our other learning rate reached an answer at 1400 iterations, this one melted our processors at 100 iterations, because the b value had become way too large.
