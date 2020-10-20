@@ -1,0 +1,70 @@
+LOGISTIC REGRESSION
+Log Loss II
+J(\mathbf{b}) = -\frac{1}{m}\sum_{i=1}^{m} [y^{(i)}log(h(z^{(i)})) + (1-y^{(i)})log(1-h(z^{(i)}))]J(b)=- 
+m
+1
+?	  
+i=1
+?
+m
+?	 [y 
+(i)
+ log(h(z 
+(i)
+ ))+(1-y 
+(i)
+ )log(1-h(z 
+(i)
+ ))]
+Let’s go ahead and break down our log-loss function into two separate parts so it begins to make more sense. Consider the case when a data sample has class y = 1, or for our data when a student passed the exam. The right-side of the equation drops out because we end up with 1 - 1 (or 0) multiplied by some value. The loss for that individual student becomes:
+
+loss_{y=1} = -log(h(z^{(i)}))loss 
+y=1
+?	 =-log(h(z 
+(i)
+ ))
+The loss for a student who passed the exam is just the log of the probability the student passed the exam!
+
+And for a student who fails the exam, where a sample has class y = 0, the left-side of the equation drops out and the loss for that student becomes:
+
+loss_{y = 0} = -log(1-h(z^{(i)}))loss 
+y=0
+?	 =-log(1-h(z 
+(i)
+ ))
+The loss for a student who failed the exam is the log of one minus the probability the student passed the exam, which is just the log of the probability the student failed the exam!
+
+Let’s take a closer look at what is going on with our loss function by graphing the loss of individual samples when the class label is y = 1 and y = 0.
+
+Log Loss for Positive and Negative Samples
+Let’s go back to our Codecademy University data and consider four possible cases:
+
+Class	Model Probability y = 1	Correct?	Loss
+y = 1	High	Yes	Low
+y = 1	Low	No	High
+y = 0	High	No	High
+y = 0	Low	Yes	Low
+
+From the graphs and the table you can see that confident correct predictions result in small losses, while confident incorrect predictions result in large losses that approach infinity. This makes sense! We want to punish our model with an increasing loss as it makes progressively incorrect predictions, and we want to reward the model with a small loss as it makes correct predictions.
+
+Just like in Linear Regression, we can then use gradient descent to find the coefficients that minimize log-loss across all of our training data.
+
+Instructions
+1.
+Let’s calculate the log-loss for our Codecademy University data. To calculate loss we need the actual classes, pass (1), or fail (0), for the students. Print passed_exam to inspect the actual classes.
+
+2.
+In the code editor, we’ve provided you with a function log_loss() that calculates the log-loss for a set of predicted probabilities and their actual classes. Use probabilities, which you calculated previously, and passed_exam as inputs to log_loss() and store the result in loss_1. Print loss_1.
+
+
+Hint
+Remember, this log-loss is the loss of our model using the best coefficients.
+
+3.
+Now that we have calculated the loss for our best coefficients, let’s compare this loss to the loss we begin with when we initialize our coefficients and intercept to 0. probabilities_2 contains the calculated probabilities of the students passing the exam with the coefficient for hours_studied set to 0. Use probabilities_2 and passed_exam as inputs to log_loss() and store the result in loss_2. Print loss_2.
+
+Which set of coefficients produced the lower log-loss?
+
+
+Hint
+The first set of coefficients produced a lower log-loss than the second set! This is because the first set of coefficients was determined by the Logistic Regression model as the optimized coefficient values. The second set of coefficients were initialized at 0, and served as a starting point.

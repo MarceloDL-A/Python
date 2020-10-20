@@ -1,0 +1,35 @@
+LOGISTIC REGRESSION
+Feature Importance
+One of the defining features of Logistic Regression is the interpretability we have from the feature coefficients. How to handle interpreting the coefficients depends on the kind of data you are working with (normalized or not) and the specific implementation of Logistic Regression you are using. We’ll discuss how to interpret the feature coefficients from a model created in sklearn with normalized feature data.
+
+Since our data is normalized, all features vary over the same range. Given this understanding, we can compare the feature coefficients’ magnitudes and signs to determine which features have the greatest impact on class prediction, and if that impact is positive or negative.
+
+Features with larger, positive coefficients will increase the probability of a data sample belonging to the positive class
+Features with larger, negative coefficients will decrease the probability of a data sample belonging to the positive class
+Features with small, positive or negative coefficients have minimal impact on the probability of a data sample belonging to the positive class
+Given cancer data, a logistic regression model can let us know what features are most important for predicting survival after, for example, five years from diagnosis. Knowing these features can lead to a better understanding of outcomes, and even lives saved!
+
+Instructions
+1.
+Let’s revisit the sklearn Logistic Regression model we fit to our exam data in the last exercise. Remember, the two features in the new model are the number of hours studied and the number of previous math courses taken.
+
+Using the model, given to you as model_2 in the code editor, save the feature coefficients to the variable coefficients.
+
+2.
+In order to visualize the coefficients, let’s pull them out of the numpy array in which they are currently stored. With numpys tolist() method we can convert the array into a list and grab the values we want to visualize.
+
+Below your original assignment of coefficients, update coefficients to equal coefficients.tolist()[0].
+
+3.
+Create a bar graph comparing the feature coefficients with matplotlib‘s plt.bar() method. Which feature appears to be more important in determining whether or not a student will pass the Introductory Machine Learning final exam?
+
+
+Hint
+A littel rusty on your matplotlib skills? No worries! To plot a bar graph of the feature coefficients, you can use the below code:
+
+plt.bar([1,2],coefficients)
+plt.xticks([1,2],['hours studied','math courses taken'])
+plt.xlabel('feature')
+plt.ylabel('coefficient')
+
+plt.show()

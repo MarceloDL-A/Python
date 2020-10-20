@@ -1,0 +1,7 @@
+K-NEAREST NEIGHBORS
+Graph of K
+The graph to the right shows the validation accuracy of our movie classifier as k increases. When k is small, overfitting occurs and the accuracy is relatively low. On the other hand, when k gets too large, underfitting occurs and accuracy starts to drop.
+
+Instructions
+What seems to be the best k for this dataset?
+Ans.: k = 77

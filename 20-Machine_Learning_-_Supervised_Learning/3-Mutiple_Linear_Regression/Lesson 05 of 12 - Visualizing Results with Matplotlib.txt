@@ -1,0 +1,52 @@
+MULTIPLE LINEAR REGRESSION
+Visualizing Results with Matplotlib
+You’ve performed Multiple Linear Regression, and you also have the predictions in y_predict. However, we don’t have insight into the data, yet. In this exercise, you’ll create a 2D scatterplot to see how the independent variables impact prices.
+
+How do you create 2D graphs?
+
+Graphs can be created using Matplotlib’s pyplot module. Here is the code with inline comments explaining how to plot using Matplotlib’s .scatter():
+
+# Create a scatter plot
+plt.scatter(x, y, alpha=0.4)
+
+# Create x-axis label and y-axis label
+plt.xlabel("the x-axis label")
+plt.ylabel("the y-axis label")
+
+# Create a title
+plt.title("title!")
+
+# Show the plot
+plt.show()
+We want to create a scatterplot like this:
+
+Visualization
+Instructions
+1.
+Create a 2D scatter plot using y_test and y_predict.
+
+The x-axis should represent actual rent prices and the y-axis should represent predicted rent prices.
+
+
+Hint
+It should look something like:
+
+plt.scatter(y_test, y_predict, alpha=0.4)
+The alpha parameter is added to better understand overlapping of points (0.0 transparent - 1.0 opaque).
+
+2.
+Add appropriate x-axis labels and y-axis labels, as well as a title.
+
+
+Hint
+plt.xlabel("Prices: $Y_i$")
+plt.ylabel("Predicted prices: $\hat{Y}_i$")
+plt.title("Actual Rent vs Predicted Rent")
+3.
+Show the plot using plt.show().
+
+
+Hint
+This line displays the figure:
+
+plt.show()

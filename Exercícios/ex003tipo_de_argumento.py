@@ -1,0 +1,5 @@
+n = input('Digite algo:')
+print(type(n))
+print('O argumento digitado é do tipo numérico?', n.isnumeric())
+print('O argumento digitado é do tipo alfabético?', n.isalpha())
+print('O argumento digitado é do tipo alfanumérico?', n.isalnum())

@@ -1,0 +1,24 @@
+ACCURACY, RECALL, PRECISION, AND F1 SCORE
+F1 Score
+It is useful to consider the precision and recall of an algorithm, however, we still don’t have one number that can sufficiently describe how effective our algorithm is. This is the job of the F1 score — F1 score is the harmonic mean of precision and recall. The harmonic mean of a group of numbers is a way to average them together. The formula for F1 score is below:
+
+F1 = 2 \* (precision \* recall) / (precision %20 recall)
+The F1 score combines both precision and recall into a single statistic. We use the harmonic mean rather than the traditional arithmetic mean because we want the F1 score to have a low value when either precision or recall is 0.
+
+For example, consider a classifier where recall = 1 and precision = 0.01. We know that there is most likely a problem with this classifier since the precision is so low, and so we want the F1 score to reflect that.
+
+If we took the arithmetic mean, we’d get:
+
+(1 %20 0.01) / 2 = 0.505
+That looks way too high! But if we calculate the harmonic mean, we get:
+
+2 * (1 * 0.01) / (1 %20 0.01) = 0.019
+That’s much better! The F1 score is now accurately describing the effectiveness of this classifier.
+
+Instructions
+1.
+After printing the precision, calculate and print the F1 score. Store the F1 score in a variable named f_1
+
+
+Hint
+F1 score is 2 * (precision * recall) / (precision + recall)

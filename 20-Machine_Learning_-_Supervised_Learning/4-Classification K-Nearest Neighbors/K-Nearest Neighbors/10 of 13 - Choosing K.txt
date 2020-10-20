@@ -1,0 +1,51 @@
+K-NEAREST NEIGHBORS
+Choosing K
+In the previous exercise, we found that our classifier got one point in the training set correct. Now we can test every point to calculate the validation accuracy.
+
+The validation accuracy changes as k changes. The first situation that will be useful to consider is when k is very small. Let’s say k = 1. We would expect the validation accuracy to be fairly low due to overfitting. Overfitting is a concept that will appear almost any time you are writing a machine learning algorithm. Overfitting occurs when you rely too heavily on your training data; you assume that data in the real world will always behave exactly like your training data. In the case of K-Nearest Neighbors, overfitting happens when you don’t consider enough neighbors. A single outlier could drastically determine the label of an unknown point. Consider the image below.
+
+colored dots with a single outlier
+
+The dark blue point in the top left corner of the graph looks like a fairly significant outlier. When k = 1, all points in that general area will be classified as dark blue when it should probably be classified as green. Our classifier has relied too heavily on the small quirks in the training data.
+
+On the other hand, if k is very large, our classifier will suffer from underfitting. Underfitting occurs when your classifier doesn’t pay enough attention to the small quirks in the training set. Imagine you have 100 points in your training set and you set k = 100. Every single unknown point will be classified in the same exact way. The distances between the points don’t matter at all! This is an extreme example, however, it demonstrates how the classifier can lose understanding of the training data if k is too big.
+
+Instructions
+1.
+Begin by creating a function called find_validation_accuracy that takes five parameters. The parameters should be training_set, training_labels, validation_set, validation_labels, and k.
+
+
+Stuck? Get a hint
+2.
+Create a variable called num_correct and have it begin at 0.0. Loop through the movies of validation_set, and call classify using each movie’s data, the training_set, the training_labels, and k. Store the result in a variable called guess. For now, return guess outside of your loop.
+
+Remember, the movie’s data can be found by using validation_set[title].
+
+
+Hint
+Your for loop should look like
+
+for title in validation_set:
+Inside the for loop, you can call classify using
+
+classify(validation_set[title], training_set, training_labels, k)
+3.
+Inside the for loop, compare guess to the corresponding label in validation_labels. If they were equal, add 1 to num_correct. For now, outside of the for loop, return num_correct
+
+
+Hint
+The label that you want to compare guess to is validation_labels[title].
+
+4.
+Outside the for loop return the validation error. This should be num_correct divided by the total number of points in the validation set.
+
+
+Hint
+len(validation_set) will give you the number of points in the validation set.
+
+5.
+Call find_validation_accuracy with k = 3. Print the results The code should take a couple of seconds to run.
+
+
+Hint
+print(find_validation_accuracy(training_set, training_labels, validation_set, validation_labels, 3))

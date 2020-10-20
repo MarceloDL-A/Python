@@ -1,0 +1,10 @@
+K-NEAREST NEIGHBOR REGRESSOR
+Review
+Great work! Here are some of the major takeaways from this lesson:
+
+The K-Nearest Neighbor algorithm can be used for regression. Rather than returning a classification, it returns a number.
+By using a weighted average, data points that are extremely similar to the input point will have more of a say in the final result.
+scikit-learn has an implementation of a K-Nearest Neighbor regressor named KNeighborsRegressor.
+In the browser, you’ll find an example of a K-Nearest Neighbor regressor in action. Instead of the training data coming from IMDb ratings, you can create the training data yourself! Rate the movies that you have seen. Once you’ve rated more than k movies, a K-Nearest Neighbor regressor will train on those ratings. It will then make predictions for every movie that you haven’t seen.
+
+As you add more and more ratings, the predictor should become more accurate. After all, the regressor needs information from the user in order to make personalized recommendations. As a result, the system is somewhat useless to brand new users — it takes some time for the system to “warm up” and get enough data about a user. This conundrum is an example of the cold start problem.

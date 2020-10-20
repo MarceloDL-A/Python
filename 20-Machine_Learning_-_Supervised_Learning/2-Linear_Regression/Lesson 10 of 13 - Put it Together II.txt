@@ -1,0 +1,39 @@
+LINEAR REGRESSION
+Put it Together II
+At each step, we know how to calculate the gradient and move in that direction with a step size proportional to our learning rate. Now, we want to make these steps until we reach convergence.
+
+Instructions
+1.
+We have all of the functions we have defined throughout the lesson.
+
+Now, let’s create a function called gradient_descent() that takes in x, y, learning_rate, and a num_iterations.
+
+For now, return [-1,-1].
+
+2.
+In the function gradient_descent(), create variables b and m and set them both to zero for our initial guess.
+
+Return b and m from the function.
+
+3.
+Update your step_gradient() function to take in the parameter learning_rate (as the last parameter) and replace the 0.01s in the calculations of b_gradient and m_gradient with learning_rate.
+
+
+Hint
+Your b_gradient should now be calculated like:
+
+b = b_current - (learning_rate * b_gradient)
+4.
+Let’s go back and finish the gradient_descent() function.
+
+Create a loop that runs num_iterations times. At each step, it should:
+
+Call step_gradient() with b, m, x, y, and learning_rate
+Update the values of b and m with the values step_gradient() returns.
+5.
+Outside of the function, uncomment the line that calls gradient_descent on months and revenue, with a learning rate of 0.01 and 1000 iterations.
+
+It stores the results in variables called b and m.
+
+6.
+Uncomment the lines that will plot the result to the browser.

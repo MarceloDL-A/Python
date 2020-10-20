@@ -1,0 +1,34 @@
+LOGISTIC REGRESSION
+Classification Thresholding
+Many machine learning algorithms, including Logistic Regression, spit out a classification probability as their result. Once we have this probability, we need to make a decision on what class the sample belongs to. This is where the classification threshold comes in!
+
+The default threshold for many algorithms is 0.5. If the predicted probability of an observation belonging to the positive class is greater than or equal to the threshold, 0.5, the classification of the sample is the positive class. If the predicted probability of an observation belonging to the positive class is less than the threshold, 0.5, the classification of the sample is the negative class.
+
+Threshold at 0.5
+We can choose to change the threshold of classification based on the use-case of our model. For example, if we are creating a Logistic Regression model that classifies whether or not an individual has cancer, we want to be more sensitive to the positive cases, signifying the presence of cancer, than the negative cases.
+
+In order to ensure that most patients with cancer are identified, we can move the classification threshold down to 0.3 or 0.4, increasing the sensitivity of our model to predicting a positive cancer classification. While this might result in more overall misclassifications, we are now missing fewer of the cases we are trying to detect: actual cancer patients.
+
+Threshold at 0.4
+Instructions
+1.
+Let’s use all the knowledge we’ve gathered to create a function that performs thresholding and makes class predictions! Define a function predict_class() that takes a features matrix, a coefficients vector, an intercept, and a threshold as parameters. Return threshold.
+
+2.
+In predict_class(), calculate the log-odds using the log_odds() function we defined earlier. Store the result in calculated_log_odds, and return calculated_log_odds.
+
+3.
+Still in predict_class(), find the probabilities that the samples belong to the positive class. Create a variable probabilities, and give it the value returned by calling sigmoid() on calculated_log_odds. Return probabilities.
+
+4.
+Return 1 for all values within probabilities equal to or above threshold, and 0 for all values below threshold.
+
+
+Hint
+Since we are working with numpy objects, we can compare all the values in an array with some threshold using the following syntax:
+
+np.where(array_to_check >= threshold, 1, 0)
+If a value in array_to_check is above threshold, the output is 1. If a value in array_to_check is below threshold, the output is 0.
+
+5.
+Let’s make final classifications on our Codecademy University data to see which students passed the exam. Use the predict_class() function with hours_studied, calculated_coefficients, intercept, and a threshold of 0.5 as parameters. Store the results in final_results, and print final_results.

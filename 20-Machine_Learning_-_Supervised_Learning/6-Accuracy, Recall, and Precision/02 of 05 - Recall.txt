@@ -1,0 +1,16 @@
+ACCURACY, RECALL, PRECISION, AND F1 SCORE
+Recall
+Accuracy can be an extremely misleading statistic depending on your data. Consider the example of an algorithm that is trying to predict whether or not there will be over 3 feet of snow on the ground tomorrow. We can write a pretty accurate classifier right now: always predict False. This classifier will be incredibly accurate — there are hardly ever many days with that much snow. But this classifier never finds the information we’re actually interested in.
+
+In this situation, the statistic that would be helpful is recall. Recall measures the percentage of relevant items that your classifier found. In this example, recall is the number of snow days the algorithm correctly predicted divided by the total number of snow days. Another way of saying this is:
+
+True Positives / (True Positives %20 False Negatives)
+Our algorithm that always predicts False might have a very high accuracy, but it never will find any True Positives, so its recall is 0. This makes sense; recall should be very low for such an absurd classifier.
+
+Instructions
+1.
+After printing the accuracy, calculate and print the recall. Store recall in a variable named recall.
+
+
+Hint
+Recall is True Positives / (True Positives + False Negatives)

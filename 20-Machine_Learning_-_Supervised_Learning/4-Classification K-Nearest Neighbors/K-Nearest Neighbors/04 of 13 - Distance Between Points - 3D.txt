@@ -1,0 +1,58 @@
+K-NEAREST NEIGHBORS
+Distance Between Points - 3D
+Making a movie rating predictor based on just the length and release date of movies is pretty limited. There are so many more interesting pieces of data about movies that we could use! So let’s add another dimension.
+
+Let’s say this third dimension is the movie’s budget. We now have to find the distance between these two points in three dimensions.
+
+3D graph
+What if we’re not happy with just three dimensions? Unfortunately, it becomes pretty difficult to visualize points in dimensions higher than 3. But that doesn’t mean we can’t find the distance between them.
+
+The generalized distance formula between points A and B is as follows:
+
+\sqrt{(A_1-B_1)^2+(A_2-B_2)^2+ \dots+(A_n-B_n)^2} 
+(A 
+1
+?	 -B 
+1
+?	 ) 
+2
+ +(A 
+2
+?	 -B 
+2
+?	 ) 
+2
+ +?+(A 
+n
+?	 -B 
+n
+?	 ) 
+2
+ 
+?	 
+Here, A1-B1 is the difference between the first feature of each point. An-Bn is the difference between the last feature of each point.
+
+Using this formula, we can find the K-Nearest Neighbors of a point in N-dimensional space! We now can use as much information about our movies as we want.
+
+We will eventually use these distances to find the nearest neighbors to an unlabeled point.
+
+Instructions
+1.
+Modify your distance function to work with any number of dimensions. Use a for loop to iterate through the dimensions of each movie.
+
+Return the total distance between the two movies.
+
+
+Stuck? Get a hint
+2.
+We’ve added a third dimension to each of our movies.
+
+Print the new distance between Star Wars and Raiders of the Lost Ark.
+
+Print the new distance between Star Wars and Mean Girls.
+
+Which movie is Star Wars closer to now?
+
+
+Hint
+print(distance(star_wars, raiders))

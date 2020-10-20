@@ -1,0 +1,20 @@
+LOGISTIC REGRESSION
+Logistic Regression
+We saw that the output of a Linear Regression model does not provide the probabilities we need to predict whether a student passes the final exam. Step in Logistic Regression!
+
+In Logistic Regression we are also looking to find coefficients for our features, but this time we are fitting a logistic curve to the data so that we can predict probabilities. Described below is an overview of how Logistic Regression works. Don’t worry if something does not make complete sense right away, we will dig into each of these steps in further detail in the remaining exercises!
+
+To predict the probability of a data sample belonging to a class, we:
+
+initialize all feature coefficients and intercept to 0
+multiply each of the feature coefficients by their respective feature value to get what is known as the log-odds
+place the log-odds into the sigmoid function to link the output to the range [0,1], giving us a probability
+By comparing the predicted probabilities to the actual classes of our data points, we can evaluate how well our model makes predictions and use gradient descent to update the coefficients and find the best ones for our model.
+
+To then make a final classification, we use a classification threshold to determine whether the data sample belongs to the positive class or the negative class.
+
+Instructions
+1.
+Provided to you is the code to build a Logistic Regression model on the Codecademy University data and plot the fitted logistic curve. Run the code and observe the plot. Expand the plot to fullscreen for a larger view.
+
+What is the lowest possible probability that can be predicted, and what is the highest possible probability that can be predicted? Enter your answer in the variables lowest and highest, respectively.

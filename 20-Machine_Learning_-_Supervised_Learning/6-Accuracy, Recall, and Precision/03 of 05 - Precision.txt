@@ -1,0 +1,18 @@
+ACCURACY, RECALL, PRECISION, AND F1 SCORE
+Precision
+Unfortunately, recall isn’t a perfect statistic either. For example, we could create a snow day classifier that always returns True. This would have low accuracy, but its recall would be 1 because it would be able to accurately find every snow day. But this classifier is just as nonsensical as the one before! The statistic that will help demonstrate that this algorithm is flawed is precision.
+
+In the snow day example, precision is the number of snow days the algorithm correctly predicted divided by the number of times it predicted there would be a snow day. The formula for precision is below:
+
+True Positives / (True Positives %20 False Positives)
+The algorithm that predicts every day is a snow day has recall of 1, but it will have very low precision. It correctly predicts every snow day, but there are tons of false positives as well.
+
+Precision and recall are statistics that are on opposite ends of a scale. If one goes down, the other will go up.
+
+Instructions
+1.
+After printing the recall, calculate and print the precision. Store the precision in a variable named precision
+
+
+Hint
+Precision is True Positives / (True Positives + False Positives)

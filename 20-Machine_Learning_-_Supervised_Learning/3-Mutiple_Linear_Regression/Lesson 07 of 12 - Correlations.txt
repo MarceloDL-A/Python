@@ -1,0 +1,52 @@
+MULTIPLE LINEAR REGRESSION
+Correlations
+In our Manhattan model, we used 14 variables, so there are 14 coefficients:
+
+[ -302.73009383  1199.3859951  4.79976742  -24.28993151  24.19824177  -7.58272473  -140.90664773  48.85017415  191.4257324  -151.11453388  89.408889  -57.89714551  -19.31948556  -38.92369828 ]]
+bedrooms - number of bedrooms
+bathrooms - number of bathrooms
+size_sqft - size in square feet
+min_to_subway - distance from subway station in minutes
+floor - floor number
+building_age_yrs - building’s age in years
+no_fee - has no broker fee (0 for fee, 1 for no fee)
+has_roofdeck - has roof deck (0 for no, 1 for yes)
+has_washer_dryer - has in-unit washer/dryer (0/1)
+has_doorman - has doorman (0/1)
+has_elevator - has elevator (0/1)
+has_dishwasher - has dishwasher (0/1)
+has_patio - has patio (0/1)
+has_gym - has gym (0/1)
+To see if there are any features that don’t affect price linearly, let’s graph the different features against rent.
+
+Interpreting graphs
+
+In regression, the independent variables will either have a positive linear relationship to the dependent variable, a negative linear relationship, or no relationship. A negative linear relationship means that as X values increase, Y values will decrease. Similarly, a positive linear relationship means that as X values increase, Y values will also increase.
+
+Graphically, when you see a downward trend, it means a negative linear relationship exists. When you find an upward trend, it indicates a positive linear relationship. Here are two graphs indicating positive and negative linear relationships:
+
+Positive and Negative Linear Relationships
+
+Instructions
+1.
+Create a scatterplot of size_sqft and rent:
+
+plt.scatter(df[['size_sqft']], df[['rent']], alpha=0.4)
+Is there a strong correlation?
+
+
+Hint
+The alpha parameter is added to better understand overlapping of points (0.0 transparent - 1.0 opaque).
+
+2.
+Create a scatterplot of min_to_subway and rent:
+
+plt.scatter(df[['min_to_subway']], df[['rent']], alpha=0.4)
+Is there a strong correlation?
+
+
+Hint
+The alpha parameter is added to better understand overlapping of points (0.0 transparent - 1.0 opaque).
+
+3.
+Do the same for a few others and write down the ones that don’t have strong correlations.
