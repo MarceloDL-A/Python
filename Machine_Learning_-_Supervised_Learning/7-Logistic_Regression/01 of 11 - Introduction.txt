@@ -1,0 +1,21 @@
+LOGISTIC REGRESSION
+Introduction
+When an email lands in your inbox, how does your email service know whether it’s a real email or spam? This evaluation is made billions of times per day, and one way it can be done is with Logistic Regression. Logistic Regression is a supervised machine learning algorithm that uses regression to predict the continuous probability, ranging from 0 to 1, of a data sample belonging to a specific category, or class. Then, based on that probability, the sample is classified as belonging to the more probable class, ultimately making Logistic Regression a classification algorithm.
+
+In our spam filtering example, a Logistic Regression model would predict the probability of an incoming email being spam. If that predicted probability is greater than or equal to 0.5, the email is classified as spam. We would call spam the positive class, with the label 1, since the positive class is the class our model is looking to detect. If the predicted probability is less than 0.5, the email is classified as ham (a real email). We would call ham the negative class, with the label 0. This act of deciding which of two classes a data sample belongs to is called binary classification.
+
+Some other examples of what we can classify with Logistic Regression include:
+
+Disease survival —Will a patient, 5 years after treatment for a disease, still be alive?
+Customer conversion —Will a customer arriving on a sign-up page enroll in a service?
+In this lesson you will learn how to perform Logistic Regression and use it to make classifications on your own data!
+
+If you are unfamiliar with Linear Regression, we recommend you go check out our Linear Regression course before proceeding to Logistic Regression. If you are familiar, let’s dive in!
+
+Instructions
+1.
+Codecademy University’s Data Science department is interested in creating a model to predict whether or not a student will pass the final exam of its Introductory Machine Learning course. The department thinks a Logistic Regression model that makes predictions based on the number of hours a student studies will work well. To aid the investigation, the department asked a supplemental question on the exam: how many hours did you study?
+
+Run the code in script.py to plot the data samples. 0 indicates that a student failed the exam, and 1 indicates a student passed the exam.
+
+How many hours does a student need to study to pass the exam?

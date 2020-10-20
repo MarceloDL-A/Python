@@ -1,0 +1,23 @@
+K-NEAREST NEIGHBORS
+Introduction
+Before diving into the K-Nearest Neighbors algorithm, let’s first take a minute to think about an example.
+
+Consider a dataset of movies. Let’s brainstorm some features of a movie data point. A feature is a piece of information associated with a data point. Here are some potential features of movie data points:
+
+the length of the movie in minutes.
+the budget of a movie in dollars.
+If you think back to the previous exercise, you could imagine movies being places in that two-dimensional space based on those numeric features. There could also be some boolean features: features that are either true or false. For example, here are some potential boolean features:
+
+Black and white. This feature would be True for black and white movies and False otherwise.
+Directed by Stanley Kubrick. This feature would be False for almost every movie, but for the few movies that were directed by Kubrick, it would be True.
+Finally, let’s think about how we might want to classify a movie. For the rest of this lesson, we’re going to be classifying movies as either good or bad. In our dataset, we’ve classified a movie as good if it had an IMDb rating of 7.0 or greater. Every “good” movie will have a class of 1, while every bad movie will have a class of 0.
+
+To the right, we’ve created some movie data points where the first item in the list is the length, the second is the budget, and the third is whether the movie was directed by Stanley Kubrick.
+
+Instructions
+1.
+Add another movie to the code to your right. Add the variable gone_with_the_wind. This movie is 238 minutes long (wow!), had a budget of $3,977,000, and was not directed by Stanley Kubrick.
+
+
+Hint
+gone_with_the_wind should be a list of three values. The last one should be False.

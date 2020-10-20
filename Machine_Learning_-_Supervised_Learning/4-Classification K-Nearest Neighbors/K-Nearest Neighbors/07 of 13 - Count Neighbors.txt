@@ -1,0 +1,80 @@
+K-NEAREST NEIGHBORS
+Count Neighbors
+The K-Nearest Neighbor Algorithm:
+
+Normalize the data
+Find the k nearest neighbors
+Classify the new point based on those neighbors
+We’ve now found the k nearest neighbors, and have stored them in a list that looks like this:
+
+[
+  [0.083, 'Lady Vengeance'],
+  [0.236, 'Steamboy'],
+  ...
+  ...
+  [0.331, 'Godzilla 2000']
+]
+Our goal now is to count the number of good movies and bad movies in the list of neighbors. If more of the neighbors were good, then the algorithm will classify the unknown movie as good. Otherwise, it will classify it as bad.
+
+In order to find the class of each of the labels, we’ll need to look at our movie_labels dataset. For example, movie_labels['Akira'] would give us 1 because Akira is classified as a good movie.
+
+You may be wondering what happens if there’s a tie. What if k = 8 and four neighbors were good and four neighbors were bad? There are different strategies, but one way to break the tie would be to choose the class of the closest point.
+
+Instructions
+1.
+Our classify function now needs to have knowledge of the labels. Add a parameter named labels to classify. It should be the third parameter.
+
+
+Hint
+The function definition should now look like:
+
+def classify(unknown, dataset, labels, k):
+2.
+Continue writing your classify function.
+
+Create two variables named num_good and num_bad and set them each at 0. Use a for loop to loop through every movie in neighbors. Store their title in a variable called title.
+
+Remember, every neighbor is a list of [distance, title] so the title can be found at index 1.
+
+For now, return title at the end of your function (outside of the loop).
+
+
+Hint
+Loop through neighbors using a for loops and access the title using movie[1]:
+
+for movie in neighbors:
+  title = movie[1]
+3.
+Use labels and title to find the label of each movie:
+
+If that label is a 0, add one to num_bad.
+If that label is a 1, add one to num_good.
+For now, return num_good at the end of your function.
+
+
+Hint
+You can find the label by using labels[title].
+
+4.
+We can finally classify our unknown movie:
+
+If num_good is greater than num_bad, return a 1.
+Otherwise, return a 0.
+
+Hint
+if num_good > num_bad:
+  return 1
+else:
+  return 0
+5.
+Call classify using the following parameters and print the result.
+
+[.4, .2, .9] as the movie you’re looking to classify.
+movie_dataset the training dataset.
+movie_labels as the training labels.
+k = 5
+Does the system predict this movie will be good or bad?
+
+
+Hint
+print(classify([.4, .2, .9], movie_dataset, movie_labels, 5))

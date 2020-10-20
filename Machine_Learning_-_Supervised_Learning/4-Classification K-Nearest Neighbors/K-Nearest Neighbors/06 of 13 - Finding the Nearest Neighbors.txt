@@ -1,0 +1,107 @@
+K-NEAREST NEIGHBORS
+Finding the Nearest Neighbors
+The K-Nearest Neighbor Algorithm:
+
+Normalize the data
+Find the k nearest neighbors
+Classify the new point based on those neighbors
+Now that our data has been normalized and we know how to find the distance between two points, we can begin classifying unknown data!
+
+To do this, we want to find the k nearest neighbors of the unclassified point. In a few exercises, we’ll learn how to properly choose k, but for now, let’s choose a number that seems somewhat reasonable. Let’s choose 5.
+
+In order to find the 5 nearest neighbors, we need to compare this new unclassified movie to every other movie in the dataset. This means we’re going to be using the distance formula again and again. We ultimately want to end up with a sorted list of distances and the movies associated with those distances.
+
+It might look something like this:
+
+[
+  [0.30, 'Superman II'],
+  [0.31, 'Finding Nemo'],
+  ...
+  ...
+  [0.38, 'Blazing Saddles']
+]
+In this example, the unknown movie has a distance of 0.30 to Superman II.
+
+In the next exercise, we’ll use the labels associated with these movies to classify the unlabeled point.
+
+Instructions
+1.
+Begin by running the program. We’ve imported and normalized a movie dataset for you and printed the data for the movie Bruce Almighty. Each movie in the dataset has three features:
+
+the normalized budget (dollars)
+the normalized duration (minutes)
+the normalized release year.
+We’ve also imported the labels associated with every movie in the dataset. The label associated with Bruce Almighty is a 0, indicating that it is a bad movie. Remember, a bad movie had a rating less than 7.0 on IMDb.
+
+Comment out the two print lines after you have run the program.
+
+
+Hint
+If you want to see some more of the data, the following line of code will print 20 movies along with their data.
+
+print(list(movie_dataset.items())[:20])
+2.
+Create a function called classify that has three parameters: the data point you want to classify named unknown, the dataset you are using to classify it named dataset, and k, the number of neighbors you are interested in.
+
+For now put pass inside your function.
+
+
+Hint
+def classify(unknown, dataset, k):
+3.
+Inside the classify function remove pass. Create an empty list called distances.
+
+Loop through every title in the dataset.
+
+Access the data associated with every title by using dataset[title].
+
+Find the distance between dataset[title] and unknown and store this value in a variable called distance_to_point.
+
+Add the list [distance_to_point, title] to distances.
+
+Outside of the loop, return distances.
+
+
+Hint
+You should loop through every point in the dataset using
+
+for title in dataset:```
+
+Find the distance between each `point` and `unknown` using 
+
+```py
+distance_to_point = distance(dataset[title], unknown)```
+
+Add `[distance_to_point, point]` to `distances`
+
+```py
+distances.append([distance_to_point, title])
+4.
+We now have a list of distances and points. We want to sort this list by the distance (from smallest to largest). Before returning distances, use Python’s built-in sort() function to sort distances.
+
+
+Hint
+distances.sort()
+5.
+The k nearest neighbors are now the first k items in distances. Create a new variable named neighbors and set it equal to the first k items of distances. You can use Python’s built-in slice function.
+
+For example, lst[2:5] will give you a list of the items at indices 2, 3, and 4 of lst.
+
+Return neighbors.
+
+
+Hint
+neighbors = distances[0:k]
+6.
+Test the classify function and print the results. The three parameters you should use are:
+
+[.4, .2, .9]
+movie_dataset
+5
+Take a look at the 5 nearest neighbors. In the next exercise, we’ll check to see how many of those neighbors are good and how many are bad.
+
+
+Hint
+Call
+
+print(classify([.4, .2, .9], movie_dataset, 5))

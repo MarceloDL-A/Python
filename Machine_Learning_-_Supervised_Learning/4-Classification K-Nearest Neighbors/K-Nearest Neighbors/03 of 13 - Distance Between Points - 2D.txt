@@ -1,0 +1,53 @@
+K-NEAREST NEIGHBORS
+Distance Between Points - 2D
+In the first exercise, we were able to visualize the dataset and estimate the k nearest neighbors of an unknown point. But a computer isn’t going to be able to do that!
+
+We need to define what it means for two points to be close together or far apart. To do this, we’re going to use the Distance Formula.
+
+For this example, the data has two dimensions:
+
+The length of the movie
+The movie’s release date
+Consider Star Wars and Raiders of the Lost Ark. Star Wars is 125 minutes long and was released in 1977. Raiders of the Lost Ark is 115 minutes long and was released in 1981.
+
+The distance between the movies is computed below:
+
+distance formula example
+Instructions
+1.
+Write a function named distance that takes two lists named movie1 and movie2 as parameters.
+
+You can assume that each of these lists contains two numbers — the first number being the movie’s runtime and the second number being the year the movie was released. The function should return the distance between the two lists.
+
+Remember, in python, x ** 0.5 will give you the square root of x.
+
+Similarly, x ** 2 will give you the square of x.
+
+
+Hint
+Break it into steps:
+
+First, find the distance between the first dimension of each list:
+
+length_difference = (movie1[0] - movie2[0]) ** 2
+Next, find the difference in the years.
+
+Finally, add those two values together and take the square root:
+
+distance = (length_difference + year_difference) ** 0.5
+Return this final distance.
+
+2.
+Call the function on some of the movies we’ve given you.
+
+Print the distance between Star Wars and Raiders of the Lost Ark.
+
+Print the distance between Star Wars and Mean Girls.
+
+Which movie is Star Wars more similar to?
+
+
+Hint
+You can find the distance between Star Wars and Raiders of the Lost Ark by doing this:
+
+print(distance(star_wars, raiders))

@@ -1,0 +1,48 @@
+K-NEAREST NEIGHBORS
+Training and Validation Sets
+You’ve now built your first K Nearest Neighbors algorithm capable of classification. You can feed your program a never-before-seen movie and it can predict whether its IMDb rating was above or below 7.0. However, we’re not done yet. We now need to report how effective our algorithm is. After all, it’s possible our predictions are totally wrong!
+
+As with most machine learning algorithms, we have split our data into a training set and validation set.
+
+Once these sets are created, we will want to use every point in the validation set as input to the K Nearest Neighbor algorithm. We will take a movie from the validation set, compare it to all the movies in the training set, find the K Nearest Neighbors, and make a prediction. After making that prediction, we can then peek at the real answer (found in the validation labels) to see if our classifier got the answer correct.
+
+If we do this for every movie in the validation set, we can count the number of times the classifier got the answer right and the number of times it got it wrong. Using those two numbers, we can compute the validation accuracy.
+
+Validation accuracy will change depending on what K we use. In the next exercise, we’ll use the validation accuracy to pick the best possible K for our classifier.
+
+Instructions
+1.
+We’ve imported training_set, training_labels, validation_set, and validation_labels. Let’s take a look at one of the movies in validation_set.
+
+The movie "Bee Movie" is in validation_set. Print out the data associated with Bee Movie. Print Bee Movie ‘s label as well (which can be found in validation_labels).
+
+Is Bee Movie a good or bad movie?
+
+
+Hint
+To print the data about Bee Movie, do the following:
+
+print(validation_set["Bee Movie"])
+Do the same for Bee Movie‘s label.
+
+2.
+Let’s have our classifier predict whether Bee Movie is good or bad using k = 5. Call the classify function using the following parameters:
+
+Bee Movie‘s data
+training_set
+training_labels
+5
+Store the results in a variable named guess and print guess.
+
+
+Hint
+Bee Movie‘s data can be found using validation_set["Bee Movie"]. Use that as the first parameter of the classify function.
+
+3.
+Let’s check to see if our classification got it right. If guess is equal to Bee Movie‘s real class (found in validation_labels), print "Correct!". Otherwise, print "Wrong!".
+
+
+Hint
+To check if the guess was right, use:
+
+if guess == validation_labels["Bee Movie"]:

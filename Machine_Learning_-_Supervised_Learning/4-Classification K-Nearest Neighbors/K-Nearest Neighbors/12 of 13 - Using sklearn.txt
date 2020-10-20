@@ -1,0 +1,50 @@
+K-NEAREST NEIGHBORS
+Using sklearn
+You’ve now written your own K-Nearest Neighbor classifier from scratch! However, rather than writing your own classifier every time, you can use Python’s sklearn library. sklearn is a Python library specifically used for Machine Learning. It has an amazing number of features, but for now, we’re only going to investigate its K-Nearest Neighbor classifier.
+
+There are a couple of steps we’ll need to go through in order to use the library. First, you need to create a KNeighborsClassifier object. This object takes one parameter - k. For example, the code below will create a classifier where k = 3
+
+classifier = KNeighborsClassifier(n_neighbors = 3)
+Next, we’ll need to train our classifier. The .fit() method takes two parameters. The first is a list of points, and the second is the labels associated with those points. So for our movie example, we might have something like this
+
+training_points = [
+  [0.5, 0.2, 0.1],
+  [0.9, 0.7, 0.3],
+  [0.4, 0.5, 0.7]
+]
+
+training_labels = [0, 1, 1]
+classifier.fit(training_points, training_labels)
+Finally, after training the model, we can classify new points. The .predict() method takes a list of points that you want to classify. It returns a list of its guesses for those points.
+
+unknown_points = [
+  [0.2, 0.1, 0.7],
+  [0.4, 0.7, 0.6],
+  [0.5, 0.8, 0.1]
+]
+
+guesses = classifier.predict(unknown_points)
+Instructions
+1.
+We’ve imported sklearn for you. Create a KNeighborsClassifier named classifier that uses k=5.
+
+
+Hint
+classifier = KNeighborsClassifier(n_neighbors = 5)
+2.
+We’ve also imported some movie data. Train your classifier using movie_dataset as the training points and labels as the training labels.
+
+
+Hint
+Call the .fit() method. movie_dataset should be the first parameter and labels should be the second.
+
+3.
+Let’s classify some movies. Classify the following movies: [.45, .2, .5], [.25, .8, .9],[.1, .1, .9]. Print the classifications!
+
+Which movies were classified as good movies and which were classified as bad movies?
+
+Remember, those three numbers associated with a movie are the normalized budget, run time, and year of release.
+
+
+Hint
+Make sure to put those three points in a list. Use classifier to call the .predict() method using that list as a parameter.

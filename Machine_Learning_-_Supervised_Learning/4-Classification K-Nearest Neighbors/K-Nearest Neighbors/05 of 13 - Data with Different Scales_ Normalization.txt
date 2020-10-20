@@ -1,0 +1,47 @@
+Data with Different Scales: Normalization
+In the next three lessons, we’ll implement the three steps of the K-Nearest Neighbor Algorithm:
+
+Normalize the data
+Find the k nearest neighbors
+Classify the new point based on those neighbors
+When we added the dimension of budget, you might have realized there are some problems with the way our data currently looks.
+
+Consider the two dimensions of release date and budget. The maximum difference between two movies’ release dates is about 125 years (The Lumière Brothers were making movies in the 1890s). However, the difference between two movies’ budget can be millions of dollars.
+
+The problem is that the distance formula treats all dimensions equally, regardless of their scale. If two movies came out 70 years apart, that should be a pretty big deal. However, right now, that’s exactly equivalent to two movies that have a difference in budget of 70 dollars. The difference in one year is exactly equal to the difference in one dollar of budget. That’s absurd!
+
+Another way of thinking about this is that the budget completely outweighs the importance of all other dimensions because it is on such a huge scale. The fact that two movies were 70 years apart is essentially meaningless compared to the difference in millions in the other dimension.
+
+The solution to this problem is to normalize the data so every value is between 0 and 1. In this lesson, we’re going to be using min-max normalization.
+
+Instructions
+1.
+Write a function named min_max_normalize that takes a list of numbers named lst as a parameter (lst short for list).
+
+Begin by storing the minimum and maximum values of the list in variables named minimum and maximum
+
+
+Hint
+You can use Python’s built in min() and max() functions. min(lst) will return the minimum value of lst.
+
+2.
+Create an empty list named normalized. Loop through each value in the original list.
+
+Using min-max normalization, normalize the value and add the normalized value to the new list.
+
+After adding every normalized value to normalized, return normalized.
+
+
+Hint
+Each normalized value will be (value-minimum)/(maximum-minimum).
+
+3.
+Call min_max_normalize using the given list release_dates. Print the resulting list.
+
+What does the date 1897 get normalized to? Why is it closer to 0 than 1?
+
+
+Hint
+print(min_max_normalize(release_dates)) will print the entire list of normalized values.
+
+To see what '1897' is normalized to, type print(min_max_normalize(release_dates)[0]).

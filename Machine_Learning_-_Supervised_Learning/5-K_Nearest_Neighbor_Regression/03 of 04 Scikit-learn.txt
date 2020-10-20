@@ -1,0 +1,55 @@
+K-NEAREST NEIGHBOR REGRESSOR
+Scikit-learn
+Now that you’ve written your own K-Nearest Neighbor regression model, let’s take a look at scikit-learn’s implementation. The KNeighborsRegressor class is very similar to KNeighborsClassifier.
+
+We first need to create the regressor. We can use the parameter n_neighbors to define our value for k.
+
+We can also choose whether or not to use a weighted average using the parameter weights. If weights equals "uniform", all neighbors will be considered equally in the average. If weights equals "distance", then a weighted average is used.
+
+classifier = KNeighborsRegressor(n_neighbors = 3, weights = "distance")
+Next, we need to fit the model to our training data using the .fit() method. .fit() takes two parameters. The first is a list of points, and the second is a list of values associated with those points.
+
+training_points = [
+  [0.5, 0.2, 0.1],
+  [0.9, 0.7, 0.3],
+  [0.4, 0.5, 0.7]
+]
+
+training_labels = [5.0, 6.8, 9.0]
+classifier.fit(training_points, training_labels)
+Finally, we can make predictions on new data points using the .predict() method. .predict() takes a list of points and returns a list of predictions for those points.
+
+unknown_points = [
+  [0.2, 0.1, 0.7],
+  [0.4, 0.7, 0.6],
+  [0.5, 0.8, 0.1]
+]
+
+guesses = classifier.predict(unknown_points)
+Instructions
+1.
+Create a KNeighborsRegressor named regressor where n_neighbors = 5 and weights = "distance".
+
+
+Hint
+regressor = KNeighborsRegressor(n_neighbors = 5, weights = "distance")
+2.
+We’ve also imported some movie data. Train your classifier using movie_dataset as the training points and movie_ratings as the training values.
+
+
+Hint
+Call the .fit() method. movie_dataset should be the first parameter and movie_ratings should be the second.
+
+3.
+Let’s predict some movie ratings. Predict the ratings for the following movies:
+
+[0.016, 0.300, 1.022],
+[0.0004092981, 0.283, 1.0112],
+[0.00687649, 0.235, 1.0112].
+These three lists are the features for Incredibles 2, The Big Sick, and The Greatest Showman. Those three numbers associated with a movie are the normalized budget, runtime, and year of release.
+
+Print the predictions!
+
+
+Hint
+Make sure to put those three points in a list. Use regressor to call the .predict() method using that list as a parameter.

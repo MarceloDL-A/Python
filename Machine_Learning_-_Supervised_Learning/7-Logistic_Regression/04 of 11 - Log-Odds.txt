@@ -1,0 +1,68 @@
+LOGISTIC REGRESSION
+Log-Odds
+In Linear Regression we multiply the coefficients of our features by their respective feature values and add the intercept, resulting in our prediction, which can range from -8 to +8. In Logistic Regression, we make the same multiplication of feature coefficients and feature values and add the intercept, but instead of the prediction, we get what is called the log-odds.
+
+The log-odds are another way of expressing the probability of a sample belonging to the positive class, or a student passing the exam. In probability, we calculate the odds of an event occurring as follows:
+
+Odds = \frac{P(event\ occurring)}{P(event\ not\ occurring)}Odds= 
+P(event not occurring)
+P(event occurring)
+?	 
+The odds tell us how many more times likely an event is to occur than not occur. If a student will pass the exam with probability 0.7, they will fail with probability 1 - 0.7 = 0.3. We can then calculate the odds of passing as:
+
+Odds\ of\ passing = \frac{0.7}{0.3} = 2.\overline{33}Odds of passing= 
+0.3
+0.7
+?	 =2. 
+33
+ 
+The log-odds are then understood as the logarithm of the odds!
+
+Log\ odds\ of\ passing = log(2.\overline{33}) = 0.847Log odds of passing=log(2. 
+33
+ )=0.847
+For our Logistic Regression model, however, we calculate the log-odds, represented by z below, by summing the product of each feature value by its respective coefficient and adding the intercept. This allows us to map our feature values to a measure of how likely it is that a data sample belongs to the positive class.
+
+z = b_{0}+b_{1}x_{1} + \cdots + b_{n}x_{n}z=b 
+0
+?	 +b 
+1
+?	 x 
+1
+?	 +?+b 
+n
+?	 x 
+n
+?	 
+b_0 is the intercept
+b_1, b_2, … b_n are the coefficients of the features x_1, x_2, … x_n
+This kind of multiplication and summing is known as a dot product.
+
+We can perform a dot product using numpy‘s np.dot() method! Given feature matrix features, coefficient vector coefficients, and an intercept, we can calculate the log-odds in numpy as follows:
+
+log_odds = np.dot(features, coefficients) + intercept
+np.dot() will take each row, or student, in features and multiply each individual feature value by its respective coefficient in coefficients, summing the result, as shown below.
+
+Matrix Multiplication
+We then add in the intercept to get the log-odds!
+
+Instructions
+1.
+Let’s create a function log_odds that takes features, coefficients and intercept as parameters. For now return features.
+
+2.
+Update log_odds to return the dot product of features and coefficients.
+
+
+Hint
+Use np.dot() with features and coefficients as parameters.
+
+3.
+Update the return statement of log-odds by adding the intercept after the dot product.
+
+4.
+With the log_odds function you created, let’s calculate the log-odds of passing for the Introductory Machine Learning students. Use hours_studied as the features, calculated_coefficients as the coefficients and intercept as the intercept. Store the result in calculated_log_odds, and print it out.
+
+
+Hint
+Where did the calculated_coefficients we used come from? These are the best coefficients we found from fitting a Logistic Regression model to our data. We normally initialize these coefficients to 0, but we are providing you the optimized values to show how our model makes predictions.

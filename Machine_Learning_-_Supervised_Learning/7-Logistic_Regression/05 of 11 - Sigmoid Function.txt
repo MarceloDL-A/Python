@@ -1,0 +1,29 @@
+LOGISTIC REGRESSION
+Sigmoid Function
+How did our Logistic Regression model create the S-shaped curve we previously saw? The answer is the Sigmoid Function.
+
+Sigmoid Function
+The Sigmoid Function is a special case of the more general Logistic Function, where Logistic Regression gets its name. Why is the Sigmoid Function so important? By plugging the log-odds into the Sigmoid Function, defined below, we map the log-odds z to the range [0,1].
+
+h(z)=\frac{1}{1+e^{-z}}h(z)= 
+1+e 
+-z
+ 
+1
+?	 
+e^(-z) is the exponential function, which can be written in numpy as np.exp(-z)
+This enables our Logistic Regression model to output the probability of a sample belonging to the positive class, or in our case, a student passing the final exam!
+
+Instructions
+1.
+Let’s create a Sigmoid Function of our own! Define a function called sigmoid() that takes z as a parameter. For now, have it return z.
+
+2.
+Inside the function and above the return statement, create a variable denominator and set it equal to 1 plus the exponential of -z. Instead of returning z, return 1/denominator.
+
+
+Hint
+Remember, the exponential of some value x can be calculated with numpy as np.exp(x).
+
+3.
+All done! Now test out your function by plugging in the calculated_log_odds we found in the previous exercise and saving the result to probabilities. Then, print probabilities.

@@ -1,0 +1,39 @@
+LOGISTIC REGRESSION
+Log-Loss I
+Now that we understand how a Logistic Regression model makes its probability predictions, what coefficients and intercept should we use in our model to best predict whether a student will pass the exam? To answer this question we need a way to evaluate how well a given model fits the data we have.
+
+The function used to evaluate the performance of a machine learning model is called a loss function, or a cost function. To evaluate how “good a fit” a model is, we calculate the loss for each data sample (how wrong the model’s prediction was) and then average the loss across all samples. The loss function for Logistic Regression, known as Log Loss, is given below:
+
+-\frac{1}{m}\sum_{i=1}^{m} [y^{(i)}log(h(z^{(i)})) + (1-y^{(i)})log(1-h(z^{(i)}))]- 
+m
+1
+?	  
+i=1
+?
+m
+?	 [y 
+(i)
+ log(h(z 
+(i)
+ ))+(1-y 
+(i)
+ )log(1-h(z 
+(i)
+ ))]
+m is the total number of data samples
+y_i is the class of data sample i
+z_i is the log-odds of sample i
+h(z_i) is the sigmoid of the log-odds of sample i, which is the probability of sample i belonging to the positive class
+The log-loss function might seem scary, but don’t worry, we are going to break it down in the next exercise!
+
+The goal of our Logistic Regression model is to find the feature coefficients and intercept, which shape the logistic function, that minimize log-loss for our training data!
+
+Instructions
+The interactive visualization in the browser lets you try to find the logistic curve that minimizes log-loss for a randomized set of data points with one feature:
+
+The slider on the left controls b_1 (coefficient of feature 1)
+The slider on the right controls b_0 (intercept)
+You can see the log-loss on the right side of the visualization.
+To check if your logistic curve minimizes the log-loss, check the “Plot Best Logistic Regression Curve” box.
+
+Randomize a new set of samples and try to fit a new logistic curve by entering the number of samples you want (try 8!) in the text box and pressing Randomize Points.

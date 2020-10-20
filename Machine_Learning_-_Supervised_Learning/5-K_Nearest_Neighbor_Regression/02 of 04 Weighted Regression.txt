@@ -1,0 +1,50 @@
+K-NEAREST NEIGHBOR REGRESSOR
+Weighted Regression
+We’re off to a good start, but we can be even more clever in the way that we compute the average. We can compute a weighted average based on how close each neighbor is.
+
+Let’s say we’re trying to predict the rating of movie X and we’ve found its three nearest neighbors. Consider the following table:
+
+Movie	Rating	Distance to movie X
+A	5.0	3.2
+B	6.8	11.5
+C	9.0	1.1
+
+If we find the mean, the predicted rating for X would be 6.93. However, movie X is most similar to movie C, so movie C’s rating should be more important when computing the average. Using a weighted average, we can find movie X’s rating:
+
+
+The numerator is the sum of every rating divided by their respective distances. The denominator is the sum of one over every distance. Even though the ratings are the same as before, the weighted average has now gone up to 7.9.
+
+Instructions
+1.
+Let’s redo our predict() function so it computes the weighted average.
+
+Before you begin looping through the neighbors, create a variable named numerator and set it to 0. Loop through every neighbor and add the neighbor’s rating (found in movie_ratings) divided by the neighbor’s distance to numerator.
+
+For now, return numerator.
+
+
+Hint
+Your for loop should look like this:
+
+numerator = 0
+for neighbor in neighbors:
+  rating = movie_ratings[neighbor[1]]
+  distance_to_neighbor = neighbor[0]
+  # Divide rating by distance_to_neighbor and add the result to numerator
+
+#Return numerator outside the for loop
+2.
+Let’s now calculate the denominator of the weighted average. Before your loop, create a variable named denominator and set it equal to 0.
+
+Inside your for loop, add 1 divided by the neighbor’s distance to denominator.
+
+Outside the loop, return numerator/denominator.
+
+
+Hint
+Inside your for loop, you should add 1/neighbor[0] to denominator.
+
+3.
+Once again call your predict function using Incredibles 2‘s features. Those features were [0.016, 0.300, 1.022]. Set k = 5. Print the results.
+
+How did using a weighted average change the predicted rating? Remember, before calculating the weighted average the prediction was 6.86.

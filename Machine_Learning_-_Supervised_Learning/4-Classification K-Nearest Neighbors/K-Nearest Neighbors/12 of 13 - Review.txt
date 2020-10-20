@@ -1,0 +1,14 @@
+K-NEAREST NEIGHBORS
+Review
+Congratulations! You just implemented your very own classifier from scratch and used Python’s sklearn library. In this lesson, you learned some techniques very specific to the K-Nearest Neighbor algorithm, but some general machine learning techniques as well. Some of the major takeaways from this lesson include:
+
+Data with n features can be conceptualized as points lying in n-dimensional space.
+Data points can be compared by using the distance formula. Data points that are similar will have a smaller distance between them.
+A point with an unknown class can be classified by finding the k nearest neighbors
+To verify the effectiveness of a classifier, data with known classes can be split into a training set and a validation set. Validation error can then be calculated.
+Classifiers have parameters that can be tuned to increase their effectiveness. In the case of K-Nearest Neighbors, k can be changed.
+A classifier can be trained improperly and suffer from overfitting or underfitting. In the case of K-Nearest Neighbors, a low k often leads to overfitting and a large k often leads to underfitting.
+Python’s sklearn library can be used for many classification and machine learning algorithms.
+To the right is an interactive visualization of K-Nearest Neighbors. If you move your mouse over the canvas, the location of your mouse will be classified as either green or blue. The nearest neighbors to your mouse are highlighted in yellow. Use the slider to change k to see how the boundaries of the classification change.
+
+If you find any interesting patterns, share it with us on Twitter!
