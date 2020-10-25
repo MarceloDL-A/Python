@@ -1,0 +1,64 @@
+CALCULATING FINANCIAL STATISTICS
+Correlation I
+Another important statistic for assessing risk is the correlation between the returns of two assets. Correlation is a measure of how closely two datasets are associated with each other. It is often represented by the correlation coefficient, which is a value that ranges between -1 and 1. This indicates whether there is a positive correlation, negative correlation, or no correlation:
+
+Positive correlation – when the rate of return of one asset deviates upward from its mean, the other usually deviates upward as well.
+
+Negative correlation – when the rate of return of one asset deviates upward from its mean, the other usually deviates downward.
+
+No correlation – when a change in one asset’s rate of return does not dictate a change in another. The correlation coefficient will be close to 0.
+
+Two assets from the same industry generally have a positive correlation, as they are likely affected by similar external conditions. For example, automobile stocks may all be positively correlated with each other. Oil stocks, on the other hand, may be negatively correlated with automobile stocks because high oil costs can negatively impact car sales.
+
+When building a portfolio, it is generally a good idea to include assets that are not correlated with each other. If assets are independent of one another, then there is a lower risk of the financial loss that can occur when assets in a portfolio are correlated. This allows for greater diversification and balances out the overall risk and return of the portfolio.
+
+Note: You may also see correlation calculated using asset prices instead of returns, but returns are generally preferred. See this blogpost on correlation calculations for more information if you are interested!
+
+Instructions
+1.
+You are given the stock returns for the General Motors Company (GM), Ford Motor Company (F), Exxon Mobil Corporation (XOM), and Apple Inc. (AAPL) in script.py. We’re also provided with a function called calculate_correlation() for calculating the correlation coefficient between two datasets.
+
+Run the code to see the coefficient for General Motors and Ford. Is there a correlation between them? If so, what kind?
+
+
+Hint
+The correlation coefficient is close to 1, so there is a strong positive correlation.
+
+2.
+Call calculate_correlation() and pass in returns_general_motors and returns_exxon_mobil. Print out the result in the string 'The correlation coefficient between General Motors and ExxonMobil is X', where X is the correlation coefficient.
+
+Is there a correlation between them? If so, what kind?
+
+
+Hint
+The correlation coefficient is close to -1, so there is a strong negative correlation.
+
+3.
+Call calculate_correlation() and pass in returns_general_motors and returns_apple. Print out the result in the string 'The correlation coefficient between General Motors and Apple is X', where X is the correlation coefficient.
+
+Is there a correlation between them? If so, what kind?
+
+
+Hint
+The correlation coefficient is close to 0, so there is very little correlation.
+
+4.
+Python’s numpy library also has a function for generating a coefficient matrix that displays the correlation between all pairs of datasets in a list. Paste the following code to the editor and print out corrcoef_matrix.
+
+corrcoef_matrix = np.corrcoef([returns_general_motors, returns_ford, returns_exxon_mobil, returns_apple])
+How well do the other assets correlate with each other?
+
+Note: Open the Hint below for more information!
+
+
+Hint
+The corrcoef_matrix that is printed out displays the correlation between all pairs of datasets in the list that was passed to the function:
+
+[returns_general_motors, returns_ford, returns_exxon_mobil, returns_apple]
+The list serves as both the row names and column names of the matrix.
+
+For example, the value in the 1st row and 3rd column (which is equal to the value in the 3rd row and 1st column) is the correlation coefficient between returns_general_motors and returns_exxon_mobil.
+
+The values along the diagonal of the matrix is the correlation coefficient of each dataset with itself, which will always be 1 (indicating a perfect correlation).
+
+See here for more info on corrcoef() function!

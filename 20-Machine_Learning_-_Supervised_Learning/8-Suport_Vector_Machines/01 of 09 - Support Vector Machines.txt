@@ -1,0 +1,36 @@
+SUPPORT VECTOR MACHINES
+Support Vector Machines
+A Support Vector Machine (SVM) is a powerful supervised machine learning model used for classification. An SVM makes classifications by defining a decision boundary and then seeing what side of the boundary an unclassified point falls on. In the next few exercises, we’ll learn how these decision boundaries get defined, but for now, know that they’re defined by using a training set of classified points. That’s why SVMs are supervised machine learning models.
+
+Decision boundaries are easiest to wrap your head around when the data has two features. In this case, the decision boundary is a line. Take a look at the example below.
+
+Two clusters of points separated by a line
+Note that if the labels on the figures in this lesson are too small to read, you can resize this pane to increase the size of the images.
+
+This SVM is using data about fictional games of Quidditch from the Harry Potter universe! The classifier is trying to predict whether a team will make the playoffs or not. Every point in the training set represents a “historical” Quidditch team. Each point has two features — the average number of goals the team scores and the average number of minutes it takes the team to catch the Golden Snitch.
+
+After finding a decision boundary using the training set, you could give the SVM an unlabeled data point, and it will predict whether or not that team will make the playoffs.
+
+Decision boundaries exist even when your data has more than two features. If there are three features, the decision boundary is now a plane rather than a line.
+
+Two clusters of points in three dimensions separated by a plane.
+As the number of dimensions grows past 3, it becomes very difficult to visualize these points in space. Nonetheless, SVMs can still find a decision boundary. However, rather than being a separating line, or a separating plane, the decision boundary is called a separating hyperplane.
+
+Instructions
+1.
+Run the code to see two graphs appear. Right now they should be identical. We’re going to fix the bottom graph so it has a good decision boundary. Why is this decision boundary bad?
+
+Checkpoint 2 Passed
+
+Hint
+The decision boundary doesn’t separate the two classes from each other!
+
+2.
+Let’s shift the line on the bottom graph to make it separate the two clusters. The slope of the line looks pretty good, so let’s keep that at -2.
+
+We want to move the boundary up, so change intercept_two so the line separates the two clusters.
+
+Checkpoint 3 Passed
+
+Hint
+intercept_two = 15 works pretty well!

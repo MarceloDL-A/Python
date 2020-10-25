@@ -1,0 +1,30 @@
+BAG-OF-WORDS LANGUAGE MODEL
+Intro to Bag-of-Words
+“A bag-of-words is all you need,” some NLPers have decreed.
+
+The bag-of-words language model is a simple-yet-powerful tool to have up your sleeve when working on natural language processing (NLP). The model has many, many use cases including:
+
+determining topics in a song
+filtering spam from your inbox
+finding out if a tweet has positive or negative sentiment
+creating word clouds
+Instructions
+1.
+In the code editor, we’ve created a spam filter using bag-of-words. Test it out!
+
+Replace the text in test_text with the text from a marketing email you’ve received and run the code. Was the result what you expected?
+
+Checkpoint 2 Passed
+
+Hint
+Spam example:
+
+Our records indicate your Pension is under-performing to see higher growth and up to 25% cash release reply for a free review.
+Normal email example:
+
+Have you ever wondered how an email ends up in the spam folder? Or how customer service phone systems are able to understand what you're saying? From a cleaner inbox to faster customer service and virtual assistants that can tell you the weather, the number of applications using natural language processing (NLP) is rapidly growing. NLP is all about how computers work with human language. Learn how to create your own powerful NLP programs with this new course!
+
+Start Now
+
+Happy coding,
+Codecademy

@@ -1,0 +1,53 @@
+BAG-OF-WORDS LANGUAGE MODEL
+Spam A Lot No More
+Amazing work! As is the case with many tasks in Python, there’s already a library that can do all of that work for you.
+
+For text_to_bow(), you can approximate the functionality with the collections module’s Counter() function:
+
+from collections import Counter
+
+tokens = ['another', 'five', 'fish', 'find', 'another', 'faraway', 'fish']
+print(Counter(tokens))
+
+# Counter({'fish': 2, 'another': 2, 'find': 1, 'five': 1, 'faraway': 1})
+For vectorization, you can use CountVectorizer from the machine learning library scikit-learn. You can use fit() to train the features dictionary and then transform() to transform text into a vector:
+
+from sklearn.feature_extraction.text import CountVectorizer
+
+training_documents = ["Five fantastic fish flew off to find faraway functions.", "Maybe find another five fantastic fish?", "Find my fish with a function please!"]
+test_text = ["Another five fish find another faraway fish."]
+bow_vectorizer = CountVectorizer()
+bow_vectorizer.fit(training_documents)
+bow_vector = bow_vectorizer.transform(test_text)
+print(bow_vector.toarray())
+# [[2 0 1 1 2 1 0 0 0 0 0 0 0 0 0]]
+Instructions
+1.
+Now, let’s see how scikit-learn stacks up with the same bag-of-words functionality! Import CountVectorizer from sklearn. (Check out the example we gave for how to import CountVectorizer.)
+
+Checkpoint 2 Passed
+2.
+Define bow_vectorizer as our vectorizer using CountVectorizer().
+
+Checkpoint 3 Passed
+
+Hint
+Check the sklearn example for help defining bow_vectorizer.
+
+3.
+Define training_vectors as bow_vectorizer.fit_transform() called on training_docs.
+
+fit_transform() does two things: creation of the features dictionary and the vectorization of the training data.
+
+Define test_vectors as bow_vectorizer.transform() called on test_docs.
+
+Checkpoint 4 Passed
+
+Hint
+# for training data:
+vector_from_training_data = vectorizer.fit_transform(training_data)
+
+# for test data:
+vector_from_test_data = vectorizer.transform(test_data)
+4.
+Uncomment the code at the bottom of script.py. Run the code again to see why it makes sense to use sklearn‘s optimized functions!

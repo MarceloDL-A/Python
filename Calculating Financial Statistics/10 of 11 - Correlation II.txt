@@ -1,0 +1,102 @@
+CALCULATING FINANCIAL STATISTICS
+Correlation II
+Now that we have a good understanding of what correlation is and how to use it to assess the risk in an investment, let’s take a closer look at how the correlation coefficient is calculated.
+
+Below is the formula for the Pearson correlation coefficient:
+
+r_{xy} = \frac{n * \Sigma{(X_{i} * Y_{i})} - \Sigma{X_{i}} * \Sigma{Y_{i}}}{\sqrt{n * \Sigma{X_{i}^{2}} - (\Sigma{X_{i}})^{2}} \sqrt{n * \Sigma{Y_{i}^{2}} - (\Sigma{Y_{i}})^{2}}}r 
+xy
+?	 = 
+n*SX 
+i
+2
+?	 -(SX 
+i
+?	 ) 
+2
+ 
+?	  
+n*SY 
+i
+2
+?	 -(SY 
+i
+?	 ) 
+2
+ 
+?	 
+n*S(X 
+i
+?	 *Y 
+i
+?	 )-SX 
+i
+?	 *SY 
+i
+?	 
+?	 
+rxy: correlation coefficient
+Xi: the ith value in dataset X
+Yi: the ith value in dataset Y
+n: the number of values in the dataset
+This equation may seem overwhelming, but don’t worry! We will break it down.
+
+Instructions
+1.
+We’ve provided the code for the calculate_correlation() function that calculates the correlation coefficient between two input datasets. It is a long one! Take a moment to understand what each section is doing and open the Hint below for more information. Proceed to the next checkpoint when you are ready.
+
+
+Hint
+The calculate_correlation() function takes two lists as inputs, set_x and set_y, each containing n values. We will break down the correlation coefficient formula and calculate each individual component.
+
+First, we calculate the sum of all values in each dataset:
+
+sum_x: SXi = X1 + X2 + ... + Xn
+sum_y: SYi = Y1 + Y2 + ... + Yn
+Then, we find the sum of all squared values in each dataset:
+
+sum_x2: SX2i = (X1)2 + (X2)2 + ... + (Xn)2
+sum_y2: SY2i = (Y1)2 + (Y2)2 + ... + (Yn)2
+Finally, we add up the product of each respective element from each dataset:
+
+sum_xy: S(Xi * Yi) = (X1 * Y1) + (X2 * Y2) + ... + (Xn * Yn)
+With these summations calculated, we can put it all together and compute the correlation coefficient with the given formula!
+
+2.
+As you may have noticed, there are multiple ways to write the code to achieve the same end result. For example, sum_x2 and sum_y2 both store the sum of all squared values in a list, but sum_x2 is obtained using a list comprehension while sum_y2 is obtained using a for loop.
+
+Although both approaches are perfectly valid, it is always a good idea to look out for ways to simplify code and improve readability. The list comprehension used for sum_x2 looks much more clean and concise! Let’s refactor sum_y2 to use a list comprehension as well.
+
+
+Hint
+Take a look at the code for sum_x2 for a hint! Your code for sum_y2 should look very similar.
+
+Recall that this is the piece of the correlation coefficient equation we are calculating for sum_y2:
+
+SY2i = (Y1)2 + (Y2)2 + ... + (Yn)2
+
+3.
+Now, let’s take a look at how sum_xy is obtained. We are looping through the range of indices generated from range(len(set_x)) and accessing each respective elements in set_x and set_y by their index i.
+
+Again, while there is nothing wrong with this approach, the code is just not the most intuitive or easy to read and understand. zip() to the rescue!
+
+Recall that zip() is a built-in function that takes two (or more) lists as inputs and returns an object that groups each respective elements together in a tuple. Replace range(len(set_x)) with a call to zip(). We would then be able to loop through the elements of both lists simultaneously.
+
+
+Hint
+The syntax for looping through zipped lists is:
+
+for element_a, element_b in zip(list_a, list_b):
+    # code goes here
+4.
+The code for sum_xy is looking cleaner already! Is there a way to simplify it further? That’s right - list comprehension! Modify your code to use a list comprehension to obtain sum_xy.
+
+
+Hint
+Recall that this is the piece of the correlation coefficient equation we are calculating for sum_xy:
+
+S(Xi * Yi) = (X1 * Y1) + (X2 * Y2) + ... + (Xn * Yn)
+
+We can use list comprehension to generate a list of the product of each respective element in each dataset. Then, we can use Python’s built-in sum() function to find the sum of all the products. The syntax should look similar to:
+
+sum([ ______ for element_a, element_b in zip(list_a, list_b)])

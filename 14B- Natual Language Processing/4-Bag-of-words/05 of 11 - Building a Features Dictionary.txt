@@ -1,0 +1,52 @@
+BAG-OF-WORDS LANGUAGE MODEL
+Building a Features Dictionary
+Now that you know what a bag-of-words vector looks like, you can create a function that builds them!
+
+First, we need a way of generating a features dictionary from a list of training documents. We can build a Python function to do that for us…
+
+Instructions
+1.
+Define a function create_features_dictionary() that takes one argument, documents. This will be the list of string documents that we pass in (like ["All the cool fish love to fly high.", "Nobody knows why the fish fly so high.", "Those cool fish sure are spry."]).
+
+Inside the function, set features_dictionary equal to an empty dictionary. This is where we’ll map all of our terms to index numbers. For now, return features_dictionary from the function.
+
+Checkpoint 2 Passed
+2.
+Above the return statement, merge the documents into a string joined together by spaces and assign the result to merged.
+
+Now that the documents are all in a single string, call preprocess_text() on merged and assign the result to tokens. Return tokens from the function in addition to features_dictionary.
+
+Checkpoint 3 Passed
+
+Hint
+To join a list into a string in Python:
+
+new_joined_string = " ".join(some_list)
+To return two items from a function:
+
+def some_function():
+  var_one = 45
+  var_two = 54
+  return var_one, var_two
+3.
+Above the return statement, assign index a value of 0. This will correspond to the first word’s vector index.
+
+Checkpoint 4 Passed
+4.
+The words are prepared, the empty dictionary is prepared, and we have an index number we can use; it’s time to get the words into the dictionary and link each to a vector index number!
+
+Above the return, loop through each token in tokens.
+In the loop, check if token is NOT in features_dictionary.
+If it’s a new word, add token as a key to features_dictionary with a value of index.
+Checkpoint 5 Passed
+
+Hint
+Assigning a key-value pair in a Python dictionary looks like:
+
+some_old_dictionary[some_key] = some_value
+5.
+After adding token to features_dictionary, increment index by 1 so that each new word has its own index.
+
+Checkpoint 6 Passed
+6.
+Uncomment the print statement to test out the function!

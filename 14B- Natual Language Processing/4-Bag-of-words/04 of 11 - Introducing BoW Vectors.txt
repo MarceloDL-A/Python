@@ -1,0 +1,35 @@
+BAG-OF-WORDS LANGUAGE MODEL
+Introducing BoW Vectors
+Sometimes a dictionary just won’t fit the bill. Topic modelling applications, for example, require an implementation of bag-of-words that is a bit more mathematical: feature vectors.
+
+A feature vector is a numeric representation of an item’s important features. Each feature has its own column. If the feature exists for the item, you could represent that with a 1. If the feature does not exist for that item, you could represent that with a 0. A few monsters could be represented as vectors like so:
+
+has_fangs	melts_in_water	hates_sunlight	has_fur
+vampire	1	0	1	0
+werewolf	1	0	0	1
+witch	0	1	0	0
+
+For bag-of-words, instead of monsters you would have documents and the features would be different words. And we don’t just care if a word is present in a document; we want to know how many times it occurred! Turning text into a BoW vector is known as feature extraction or vectorization.
+
+But how do we know which vector index corresponds to which word? When building BoW vectors, we generally create a features dictionary of all vocabulary in our training data (usually several documents) mapped to indices.
+
+For example, with “Five fantastic fish flew off to find faraway functions. Maybe find another five fantastic fish?” our dictionary might be:
+
+{'five': 0,
+'fantastic': 1,
+'fish': 2,
+'fly': 3,
+'off': 4,
+'to': 5,
+'find': 6,
+'faraway': 7,
+'function': 8,
+'maybe': 9,
+'another': 10}
+Using this dictionary, we can convert new documents into vectors using a vectorization function. For example, we can take a brand new sentence “Another five fish find another faraway fish.” — test data — and convert it to a vector that looks like:
+
+[1, 0, 2, 0, 0, 0, 1, 1, 0, 0, 2]
+The word ‘another’ appeared twice in the test data. If we look at the feature dictionary for ‘another’, we find that its index is 10. So when we go back and look at our vector, we’d expect the number at index 10 to be 2.
+
+Instructions
+In the applet, you’ll see a string of text and its corresponding BoW vector trained on the dictionary of terms indicated. Add a word or two to the string from the vocabulary. How does the vector change? Now remove a few words. What happens?

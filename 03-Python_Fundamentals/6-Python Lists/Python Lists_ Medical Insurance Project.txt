@@ -1,0 +1,179 @@
+PYTHON FUNDAMENTALS
+Python Lists: Medical Insurance Project
+In this project, you will examine how factors such as age, sex, BMI, number of children, and smoking status contribute to medical insurance costs.
+
+You will apply your new knowledge of Python Lists to store insurance cost data in a list as well as compare estimated insurance costs to actual insurance costs.
+
+Let’s get started!
+
+Tasks
+12/12 Complete
+Mark the tasks as complete by checking them off
+Creating a List
+1.
+First, take a look at the code in script.py.
+
+The function estimate_insurance_cost() estimates the medical insurance cost for an individual, based on five variables:
+
+age: age of the individual in years
+sex: 0 for female, 1 for male
+bmi: individual’s body mass index
+num_of_children: number of children the individual has
+smoker: 0 for a non-smoker, 1 for a smoker
+These variables are used in the following formula to estimate an individual’s insurance cost (in USD):
+
+insurance\_cost = 250*age - 128*sex + 370*bmi + 425*num\_of\_children + 24000*smoker - 12500insurance_cost=250*age-128*sex+370*bmi+425*num_of_children+24000*smoker-12500
+Click “Save” to see the estimated insurance costs for three individuals – Maria, Rohan, and Valentina.
+
+
+Hint
+The output should look like:
+
+Maria's Estimated Insurance Cost: 4222.0 dollars.
+Rohan's Estimated Insurance Cost: 5442.0 dollars.
+Valentina's Estimated Insurance Cost: 36368.0 dollars.
+2.
+We want to compare the estimated insurance costs (as calculated by our function) to the actual amounts that Maria, Rohan, and Valentina paid.
+
+Create a list called names and fill it with the names of the individuals you are estimating insurance costs for:
+
+"Maria"
+"Rohan"
+"Valentina"
+
+Hint
+Use the following code to define the names list:
+
+names = ["Maria", "Rohan", "Valentina"]
+3.
+Next, create a list called insurance_costs and fill it with the actual amounts that Maria, Rohan, and Valentina paid for insurance:
+
+4150.0
+5320.0
+35210.0
+
+Hint
+Use the following code to define the insurance_costs list:
+
+insurance_costs = [4150.0, 5320.0, 35210.0]
+Combining Lists
+4.
+Currently the names and insurance_costs lists are separate, but we want each name to be paired with an insurance cost.
+
+Create a new variable called insurance_data that combines names and insurance_costs using the zip() function.
+
+Print this new variable.
+
+
+Hint
+Use the following code to combine names and insurance_costs and then print the result:
+
+insurance_data = zip(names, insurance_costs)
+print(insurance_data)
+5.
+The output should look something like:
+
+<zip object at 0x7f1631e86b48>
+This output does not mean much to us. To change it to a format we can actually understand, we must convert the zip object to a list by doing the following:
+
+list(zip(____, ____))
+Convert the insurance_data object to a list using this method. Click “Save” to see the result – you should now see a list of names and insurance costs.
+
+
+Hint
+To convert the insurance_data object to a list, do the following:
+
+insurance_data = list(zip(names, insurance_costs))
+The output should look like:
+
+[('Maria', 4150.0), ('Rohan', 5320.0), ('Valentina', 35210.0)]
+Appending to a List
+6.
+Next, create an empty list called estimated_insurance_data.
+
+This is the list we’ll use to store the estimated insurance costs for our three individuals.
+
+
+Hint
+Use the following code to define the estimated_insurance_data list:
+
+estimated_insurance_data = []
+7.
+We want to add our estimated insurance data for Maria, Rohan, and Valentina to the estimated_insurance_data list.
+
+Use .append() to add ("Maria", maria_insurance_cost) to estimated_insurance_data. Do the same for Rohan and Valentina.
+
+
+Hint
+Use .append() to add data to the estimated_insurance_data list:
+
+estimated_insurance_data.append(("Maria", maria_insurance_cost))
+estimated_insurance_data.append(("Rohan", rohan_insurance_cost))
+estimated_insurance_data.append(("Valentina", valentina_insurance_cost))
+8.
+Print estimated_insurance_data.
+
+Make sure the output is what you expected.
+
+
+Hint
+The output should look like:
+
+[('Maria', 4222.0), ('Rohan', 5442.0), ('Valentina', 36368.0)] 
+Inspecting the data
+9.
+In the output, you should see two lists. The first one represents the actual insurance cost data and the second one represents the estimated insurance cost data.
+
+However, it’s difficult to know this just by looking at the output. As a data scientist, you want to make sure that your data is clean and easy to understand.
+
+Add to the print statement for insurance_data so that it’s clear what the list contains. The output of the print statement should look like:
+
+Here is the actual insurance cost data: [...list output...]
+
+Hint
+The print statement for insurance_data should look like:
+
+print("Here is the actual insurance cost data: " + str(insurance_data))
+Make sure to convert the insurance_data list to a string using str().
+
+10.
+Do the same for the print statement that prints estimated_insurance_data. The output should look like:
+
+Here is the estimated insurance cost data: [...list output...]
+
+Hint
+The print statement for estimated_insurance_data should look like:
+
+print("Here is the estimated insurance cost data: " + str(estimated_insurance_data))
+Make sure to convert the estimated_insurance_data list to a string using str().
+
+11.
+Click “Save” to see the results.
+
+It should be much more clear from the output what each of the two lists represents, helping you better understand the data you’re working with.
+
+You may notice that there are differences between the actual insurance costs and estimated insurance costs. This means that our estimate_insurance_cost() function does not calculate insurance costs with 100% accuracy.
+
+Compare the estimated insurance data to the actual insurance data. Do the estimated insurance costs seem to be overestimated or underestimated?
+
+
+Hint
+The output should look like:
+
+Here is the actual insurance cost data: [('Maria', 4150.0), ('Rohan', 5320.0), ('Valentina', 35210.0)]
+Here is the estimated insurance cost data: [('Maria', 4222.0), ('Rohan', 5442.0), ('Valentina', 36368.0)]
+The actual insurance costs seem to be lower than the estimated insurance costs for each of the three individuals, indicating that our estimate_insurance_cost() function might be underestimating the insurance cost.
+
+While not perfect, the function seems to do a decent job at estimating insurance costs.
+
+Extra
+12.
+Congratulations! In this project, you used Python lists to store estimated insurance cost data and then compare that data to actual insurance cost data.
+
+As you’ve seen, lists are data structures in Python that can contain multiple pieces of data in a single object. As a data scientist, you’ll find yourself working with this data structure quite often. You now have a solid foundation to move forward in your data science journey!
+
+If you’d like additional practice on lists, here are some ways you might extend this project:
+
+Calculate the difference between the actual insurance cost data and the estimated insurance cost data for each individual, and store the results in a list called insurance_cost_difference.
+Estimate the insurance cost for a new individual, Akira, who is a 19 year-old male non-smoker with no children and a BMI of 27.1. Make sure to append his name to names and his actual insurance cost, 2930.0, to insurance_costs.
+Happy coding!
