@@ -1,0 +1,31 @@
+SUPPORT VECTOR MACHINES
+Optimal Decision Boundaries
+One problem that SVMs need to solve is figuring out what decision boundary to use. After all, there could be an infinite number of decision boundaries that correctly separate the two classes. Take a look at the image below:
+
+6 different valid decision boundaries
+There are so many valid decision boundaries, but which one is best? In general, we want our decision boundary to be as far away from training points as possible.
+
+Maximizing the distance between the decision boundary and points in each class will decrease the chance of false classification. Take graph C for example.
+
+An SVM with a decision boundary very close to the blue points.
+The decision boundary is close to the blue class, so it is possible that a new point close to the blue cluster would fall on the red side of the line.
+
+Out of all the graphs shown here, graph F has the best decision boundary.
+
+Instructions
+1.
+Run the code. Both graphs have suboptimal decision boundaries. Why? We’re going to fix the bottom graph.
+
+
+Hint
+These decision boundaries are too close to the training data!
+
+2.
+We’re going to have to make the decision boundary much flatter, which means we first need to lower its y-intercept. Change intercept_two to be 8.
+
+3.
+Next, we want the slope to be pretty flat. Change the value of slope_two. The resulting line should split the two clusters.
+
+
+Hint
+slope_two = -0.5 works well!

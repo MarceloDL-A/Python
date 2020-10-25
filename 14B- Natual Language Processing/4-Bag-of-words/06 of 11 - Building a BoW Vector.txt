@@ -1,0 +1,32 @@
+BAG-OF-WORDS LANGUAGE MODEL
+Building a BoW Vector
+Nice work! Time to put that dictionary of vocabulary to good use and build a bag-of-words vector from a new document.
+
+In Python, we can use a list to represent a vector. Each index in the list will correspond to a word and be set to its count.
+
+features dictionary of words 'all, my, fish, fly, away, help, me' transforms the string 'help my fly fish fly away' into the vector [0,1,1,2,1,1,0]
+Instructions
+1.
+Define a function text_to_bow_vector() with two parameters:
+
+some_text (the document we pass in to vectorize)
+features_dictionary (the dictionary of vocabulary we generated in the previous exercise)
+Create a list of 0s the length of features_dictionary and assign it to the variable bow_vector. Each 0 represents a word’s count within the vector.
+
+Return bow_vector from the function.
+
+Checkpoint 2 Passed
+
+Stuck? Get a hint
+2.
+Above the return statement, preprocess the some_text document using the preprocess_text() function we built for you and assign the result to the variable tokens. Add tokens as a second return value for the function.
+
+Checkpoint 3 Passed
+3.
+Still above the return statement, loop through each token in tokens.
+
+Determine which index the token has within features_dictionary and assign the value to a new variable feature_index. (Take a look a the gif. If token is the word fish, then we would want feature_index to be 2.)
+Now that you have the word’s index, access the word count index within the bow_vector and increment that count by 1.
+Checkpoint 4 Passed
+4.
+Uncomment the print statement to test out the function!

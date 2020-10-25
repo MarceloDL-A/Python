@@ -1,0 +1,23 @@
+BAG-OF-WORDS LANGUAGE MODEL
+BoW Ow
+Alas, there is a trade-off for all the brilliance BoW brings to the table.
+
+Unless you want sentences that look like “the a but for the”, BoW is NOT a great primary model for text prediction. If that sort of “sentence” isn’t your bag, it’s because bag-of-words has high perplexity, meaning that it’s not a very accurate model for language prediction. The probability of the following word is always just the most frequently used words.
+
+If your BoW model finds “good” frequently occurring in a text sample, you might assume there’s a positive sentiment being communicated in that text… but if you look at the original text you may find that in fact every “good” was preceded by a “not.”
+
+Hmm, that would have been helpful to know. The BoW model’s word tokens lack context, which can make a word’s intended meaning unclear.
+
+Perhaps you are wondering, “What happens if the model comes across a new word that wasn’t in the training data?” As mentioned, like all statistical models, BoW suffers from overfitting when it comes to vocabulary.
+
+There are several ways that NLP developers have tackled this issue. A common approach is through language smoothing in which some probability is siphoned from the known words and given to unknown words.
+
+Instructions
+1.
+Run the code as is to see a made-up Oscar Wilde passage using a training text written by him. The tool currently uses the n-gram statistical model with a word sequence length of 3 (e.g., “I made the”) to make predictions.
+
+Checkpoint 2 Passed
+2.
+Change sequence_length to 1 so that we use the bag-of-words model. For the purposes of this function, we’ll pick each next word randomly from the 20 most common words.
+
+Run the code again to see how bag of words compares with the n-gram model on language prediction. Not so great, right?

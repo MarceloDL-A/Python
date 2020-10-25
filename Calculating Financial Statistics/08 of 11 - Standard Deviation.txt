@@ -1,0 +1,71 @@
+CALCULATING FINANCIAL STATISTICS
+Standard Deviation
+Although the variance is useful in determining the relative risk of an investment, it is sometimes not the easiest statistic to interpret since it does not have the same unit as the original data. As an alternative, it is common to use the standard deviation to describe the spread of the dataset.
+
+Standard deviation is simply the square root of the variance. It has the same unit as the original dataset.
+
+\sigma = \sqrt{\frac{\Sigma(X_{i} - \bar{X})^{2}}{n}}s= 
+n
+S(X 
+i
+?	 - 
+X
+¯
+ ) 
+2
+ 
+?	 
+?	 
+s: standard deviation
+Xi: the ith value in the dataset
+X¯: the mean of the dataset
+n: the number of values in the dataset
+Instructions
+1.
+Let’s again use Python’s numpy library to preview the standard deviations for the two stock returns. Run the provided code. Notice how the standard deviation has the same unit as the original data.
+
+2.
+Now, let’s calculate the standard deviation ourselves! First, import the sqrt() function from the math module at the top of the file.
+
+
+Hint
+To import a function from a module, the syntax is:
+
+from module_name import function_name
+3.
+Next, call the calculate_variance() function you wrote in the previous exercise (which is imported at the top of the file) and pass in the dataset provided. Store the returned value in a variable called variance.
+
+
+Hint
+We can call the imported function calculate_variance() the same way as any other function.
+
+4.
+Take the square root of variance using the imported sqrt() function and store the result in a variable called stddev.
+
+
+Hint
+We can call the sqrt() function imported from the math module to calculate the square root of a value.
+
+5.
+Now, let’s move the code for calculating standard deviation inside a function!
+
+Define a function called calculate_stddev() that takes a parameter called dataset. Indent your code to be inside the function body and return stddev.
+
+Note: Make sure the indentation for your block of code is consistent inside the function body.
+
+
+Hint
+Indentation is very important when writing functions in Python. Make sure all lines of code inside the function body are aligned:
+
+def my_function():
+    # code goes here
+    # code goes here
+    # code goes here
+6.
+Under the function definition (but above the final print statements), call calculate_stddev() to find the standard deviation of returns_disney and returns_cbs. Reassign the variables stddev_disney and stddev_cbs to store those values, respectively.
+
+Run the code! We should see that we get the same result as when we called the numpy function.
+
+
+Hint
+To reassign the value of a variable, simply use the = operator just like assigning any other variable.

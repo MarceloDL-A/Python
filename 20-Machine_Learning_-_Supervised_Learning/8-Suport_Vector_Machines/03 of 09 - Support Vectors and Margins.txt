@@ -1,0 +1,33 @@
+SUPPORT VECTOR MACHINES
+Support Vectors and Margins
+We now know that we want our decision boundary to be as far away from our training points as possible. Let’s introduce some new terms that can help explain this idea.
+
+The support vectors are the points in the training set closest to the decision boundary. In fact, these vectors are what define the decision boundary. But why are they called vectors? Instead of thinking about the training data as points, we can think of them as vectors coming from the origin.
+
+Points represented as vectors.
+These vectors are crucial in defining the decision boundary — that’s where the “support” comes from. If you are using n features, there are at least n+1 support vectors.
+
+The distance between a support vector and the decision boundary is called the margin. We want to make the margin as large as possible. The support vectors are highlighted in the image below:
+
+decision boundary with margin highlighted
+Because the support vectors are so critical in defining the decision boundary, many of the other training points can be ignored. This is one of the advantages of SVMs. Many supervised machine learning algorithms use every training point in order to make a prediction, even though many of those training points aren’t relevant. SVMs are fast because they only use the support vectors!
+
+Instructions
+1.
+What are the support vectors for the SVM pictured below? There should be 2 blue support vectors and 1 red support vector.
+
+The blue points are at (2, 1), (2, 1), and (2.5, 2). The red points are at (1, 6), (1.5, 8), and (2, 7). The decision boundary is the line y = 4. 
+Finish defining red_support_vector, blue_support_vector_one, and blue_support_vector_two. Set them equal to the correct points. The point should be represented as a list like [1, 0.5].
+
+Checkpoint 2 Passed
+
+Hint
+One of the closest blue point to the line is [2.5, 2].
+
+2.
+What is the size of the margin? Find the total distance between a support vector and the line by looking at the graph. Create a variable named margin_size and set it equal to the correct number.
+
+Checkpoint 3 Passed
+
+Hint
+The distance between one of the support vectors and the line is 2.

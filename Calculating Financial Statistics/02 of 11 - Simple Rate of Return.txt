@@ -1,0 +1,72 @@
+CALCULATING FINANCIAL STATISTICS
+Simple Rate of Return
+Now that we are familiar with how the rate of return is usually expressed, let’s take a look at calculating it.
+
+The most basic type of return is the simple rate of return. It is defined as the difference between the starting and ending price of an investment over a time period, divided by the starting price. If an investment returns dividends, those dividends should be added to the numerator.
+
+R = \frac{E - S + D}{S}R= 
+S
+E-S+D
+?	 
+R: simple rate of return
+S: starting price of investment
+E: ending price of investment
+D: dividend
+In the equation above, the numerator represents the absolute amount gained or lost in an investment. For example, if the starting price of an investment is $25 and the ending price is $30, then there is a $5 profit.
+
+While this gives us some information about the return of an investment, it is by itself not very useful for comparing between investments. That is, a $5 profit from a $25 investment may be a decent gain, but the same $5 profit from a $10,000 investment would be trivial.
+
+This is why the simple rate of return is calculated as the absolute gain or loss divided by the starting price of the investment. By expressing the return as a percentage of the originally invested amount, we can more easily compare across different investments.
+
+Instructions
+1.
+Define a function called calculate_simple_return() that has 2 required parameters and 1 optional parameter:
+
+start_price: starting price of investment
+end_price: ending price of investment
+dividend: dividend (default value: 0)
+For now, just put return in the function body.
+
+
+Hint
+In the function definition, we can assign default values to parameters using this syntax:
+
+def my_function(input_1, input_2=default_value):
+    # code goes here
+Now, input_2 is optional during the function call. If it is not provided, it will take the value default_value.
+
+2.
+Now, calculate the simple rate of return using the formula provided in the narrative above and return the result.
+
+
+Hint
+Inside the function, we’ll want to return the calculated simple rate of return, which should look something like:
+
+(end_price - start_price + ______) / start_price
+Replace the ______ with the appropriate variable to calculate the simple rate of return.
+
+3.
+Call the function, passing in 200 as the start_price and 250 as the end_price, and store the result in a variable called simple_return.
+
+
+Hint
+The value returned from a function call can be stored in a variable using the syntax:
+
+my_variable = my_function(...)
+4.
+Print the string 'The simple rate of return is X%', where X% is the simple_return expressed as a percentage. Use the display_as_percentage() helper function you’ve written in the previous exercise to display the value as a percentage.
+
+
+Hint
+We can call display_as_percentage() to format a value with the syntax:
+
+display_as_percentage(my_value)
+The print() function can take multiple arguments and will print each item separated by a space. We can print out the value returned from our function call in a sentence like this:
+
+print('The value formatted as a percentage is', display_as_percentage(my_value))
+5.
+Now, modify your function call to include a dividend of 20 for the investment and run your code. How did the simple rate of return change?
+
+
+Hint
+An optional argument can be passed to a function the same way as any other argument. Optional arguments always come after all positional arguments.

@@ -1,0 +1,63 @@
+CALCULATING FINANCIAL STATISTICS
+Review
+Congratulations on reaching the end!
+
+In this lesson, we learned to calculate and understand the rate of return of an investment:
+
+Simple Rate of Return – advantageous for aggregating over assets
+Logarithmic Rate of Return – advantageous for aggregating over time
+We also covered other key financial statistics and what they signify in terms of the risk of an investment:
+
+Variance – measure of the spread of a dataset; an asset with low variance is less risky
+Standard Deviation – square root of the variance; easier to interpret than variance because it has the same unit as the original dataset
+Correlation – measure of the association between datasets; assets with no correlation have returns that are independent of each other
+Let’s practice what we’ve learned! We’ll be using some of the functions you’ve written in the previous exercises in this lesson. They are imported at the top of script.py.
+
+Instructions
+1.
+We are given the historical annual rates of return for an investment in the list annual_returns. Recall that the calculated returns are typically in decimal form, as seen here. But more often, we’d express this value as a percentage.
+
+Use the display_as_percentage() function to display each value in annual_returns as a percentage. Store the resulting list in a variable called annual_returns_percentage. Feel free to print out the list to see what it looks like.
+
+
+Hint
+One approach is to use list comprehension. The syntax for calling a function on each element in the list is:
+
+[my_function(element) for element in my_list]
+2.
+Great! Now, let’s further improve the readability of the data by putting it in some context and formatting it in a sentence.
+
+Print out the string: 'The historical annual rates of return are: X%, X%, ..., X%', where the percent rates of return are separated by commas.
+
+How do the rates of return change over the years? Is the investment overall profitable?
+
+
+Hint
+We can use the string method .join() to help display the list of annual_returns_percentage as a string where each element is separated by a comma:
+
+', '.join(my_list)
+3.
+Now let’s calculate the variance of the rates of return. Use the calculate_variance() function and store the returned value in a variable called variance.
+
+Copy the following line to the text editor to print out the result:
+
+print('The variance of the rates of return is', variance)
+Can you tell anything about the relative risk of the investment from this number?
+
+
+Hint
+Remember to pass in annual_returns (list of numerical values) to calculate_variance() and not annual_returns_percentage (list of formatted strings)!
+
+4.
+Recall that the variance is not always the most intuitive statistic to interpret because it does not have the same unit of measurement as the original dataset. But standard deviation does!
+
+Use the calculate_stddev() function to calculate the standard deviation of the rates of return. Since the standard deviation has the same unit as the rate of return, also use display_as_percentage() to format the value and store it in a variable called stddev.
+
+Copy the following line to the editor to print out the result:
+
+print('The standard deviation of the rates of return is', stddev)
+What can you tell about the overall spread of the data and risk of the investment?
+
+
+Hint
+Remember to pass in annual_returns (list of numerical values) to calculate_stddev() and not annual_returns_percentage (list of formatted strings)!

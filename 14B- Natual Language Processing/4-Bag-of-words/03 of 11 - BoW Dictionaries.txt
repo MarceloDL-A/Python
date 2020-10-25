@@ -1,0 +1,44 @@
+BAG-OF-WORDS LANGUAGE MODEL
+BoW Dictionaries
+One of the most common ways to implement the BoW model in Python is as a dictionary with each key set to a word and each value set to the number of times that word appears. Take the example below:
+
+The squids jumped out of the suitcases.
+The words from the sentence go into the bag-of-words and come out as a dictionary of words with their corresponding counts. For statistical models, we call the text that we use to build the model our training data. Usually, we need to prepare our text data by breaking it up into documents (shorter strings of text, generally sentences).
+
+Let’s build a function that converts a given training text into a bag-of-words!
+
+Instructions
+1.
+Define a function text_to_bow() that accepts some_text as a variable. Inside the function, set bow_dictionary equal to an empty dictionary and return it from the function. This is where we’ll be collecting the words and their counts.
+
+Checkpoint 2 Passed
+2.
+Above the return statement, call the preprocess_text() function we created for you on some_text and assign the result to the variable tokens.
+
+Text preprocessing allows us to count words like “game” and “Games” as the same word token.
+
+Checkpoint 3 Passed
+3.
+Still above the return, iterate over each token in tokens and check if token is already in the bow_dictionary.
+
+If it is, increment that token’s count by 1. (Remember that each token‘s count is its corresponding value within the bow_dictionary.)
+Otherwise, set the count equal to 1 because this is the first time the model has seen that word token.
+Checkpoint 4 Passed
+
+Hint
+To iterate through a list in Python:
+
+for some_item in list_of_items:
+  # do something with some_item
+To check if an item exists as a key in a Python dictionary:
+
+if some_item in some_dictionary:
+  # execute some code
+You can set a key-value pair in a dictionary like this:
+
+some_dictionary[some_key] = some_value
+To increment a dictionary value in Python:
+
+some_dictionary[some_key] += 1
+4.
+Uncomment the print statement and run the code to see your bag-of-words function in action!

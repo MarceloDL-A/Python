@@ -1,0 +1,49 @@
+CALCULATING FINANCIAL STATISTICS
+Introduction
+In this lesson, we will be learning how to use Python to calculate key financial statistics for making informed decisions about investments. There are many different kinds of financial assets, or securities, ranging from real estate to government bonds to the common stock. But no matter the type of investment, there are two things that we always need to consider about each asset - the return and the risk.
+
+The rate of return is a measure of the amount of money gained or lost in an investment. A positive return signifies a profit and a negative return indicates a loss. The risk of an investment is defined as the likelihood of suffering a financial loss.
+
+There is often a tradeoff between risk and return, where the higher the potential return of an asset, the higher the risk involved. Thus, it is important to understand both aspects for making smart choices about an investment - which we will learn to do in this lesson.
+
+Let’s get started by looking at the rate of return!
+
+Instructions
+1.
+When speaking about investments, we express the calculated rate of return as a percentage. For example, it’s more common to say that Investment A has a 7.5% rate of return, instead of a rate of return of 0.075.
+
+Let’s write a function that we will use throughout the lesson for converting a decimal value to the percent form. First, define a variable called rate_of_return and assign to it a value of 0.075.
+
+Checkpoint 2 Passed
+
+Hint
+Variables can be given a value using the assignment operator =.
+
+2.
+Next, define a function called display_as_percentage() that takes a parameter called val, which will be the value in decimal form. For now, just put return inside the function body.
+
+Checkpoint 3 Passed
+
+Stuck? Get a hint
+3.
+Now, let’s format val to have our function return a percentage. We want to:
+
+Multiply val by 100
+Round the result to 1 decimal place
+Return a formatted string that ends with a '%'
+Checkpoint 4 Passed
+
+Hint
+One way to approach this is to use the string method .format() to help format the value as a percentage. See here for additional information.
+
+Alternatively, we can use Python’s built-in function round() to round the value to 1 decimal place, then str() to cast it to a string and concatenate the percent symbol. See here for more info on built-in functions!
+
+4.
+Let’s test out our function! Call display_as_percentage() to format rate_of_return as a percentage, and print out the result.
+
+Checkpoint 5 Passed
+
+Hint
+To call a function, we write the function name followed by a pair of parentheses. If the function takes any arguments, they go inside the parentheses:
+
+my_function(my_value)

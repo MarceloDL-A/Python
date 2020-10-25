@@ -1,0 +1,96 @@
+CALCULATING FINANCIAL STATISTICS
+Variance
+Now that we have a good understanding of rate of return, let’s shift our focus to assessing the risk involved in an investment. One of the key statistics for understanding risk is variance. Variance is a measure of the spread of a dataset, or how far apart each value is from the mean. The greater the variance, the more spread out or variable the data is.
+
+For example, let’s take a look at the data below showing the returns of two investments over the course of a week. Which one has a higher variance? What do you think that tells us about their relative risk?
+
+# Investment A
+returns_a = [0.05, -0.10, -0.08, 0.05, 0.14]
+
+# Investment B
+returns_b = [-0.01, 0.02, 0.01, 0.04, 0.03]
+As seen, the returns for Investment A fluctuates more throughout the week while the returns for Investment B remain relatively consistent. This means Investment A has a higher variance and therefore a higher risk. An asset with a high variance is generally a riskier one because its return can vary significantly in a short period of time, making it less stable and more unpredictable.
+
+The formula for calculating variance is:
+
+\sigma^{2} = \frac{\Sigma(X_{i} - \bar{X})^{2}}{n}s 
+2
+ = 
+n
+S(X 
+i
+?	 - 
+X
+¯
+ ) 
+2
+ 
+?	 
+s2: variance
+Xi: the ith value in the dataset
+X¯: the mean of the dataset
+n: the number of values in the dataset
+Instructions
+1.
+You are given the historical annual stock returns for the Walt Disney Company (DIS) and CBS Corporation (CBS) in script.py. Run the code to see the variance of each. Which would be considered the riskier investment?
+
+Note: We are using Python’s numpy library to calculate the variance here. Don’t worry too much about the syntax - we will cover numpy in a future lesson!
+
+
+Hint
+The variance of CBS stock returns is greater. Therefore, it is the riskier investment.
+
+2.
+Now, let’s calculate the variance ourselves! We will use the sample dataset provided. First, calculate the mean of the values in dataset and store the result in a variable called mean.
+
+
+Hint
+We can use the built-in sum() and len() functions to calculate the mean. See the Python documentation on built-in functions for more information on Python’s built-in functions.
+
+The mean value of a list can thus be calculated by dividing the sum() of the values in the list by the number of values in the list (the len() of the list).
+
+3.
+Next, calculate the sum in the numerator of the variance formula by looping through the dataset list and adding up the squared difference between each data point and the mean. Store the sum in a variable called numerator.
+
+
+Hint
+To loop through a list and add to a sum variable, we can use the syntax:
+
+my_sum = 0
+
+for item in my_list:
+    # calculate my_value
+
+    my_sum += my_value
+Also, remember that ** is the power (exponential) operator in Python.
+
+4.
+Divide the numerator by the number of values in dataset to obtain the variance. Store the value in a variable called variance.
+
+
+Hint
+Use len() to find the number of values in dataset.
+
+5.
+Great! Now that we have the code for calculating the variance, let’s move it inside a function so we can call it for other datasets.
+
+Define a function called calculate_variance() that takes a parameter called dataset. Indent your code to be inside the function body and return variance.
+
+Note: Make sure the indentation for your block of code is consistent inside the function body.
+
+
+Hint
+Indentation is very important when writing functions in Python. Make sure all lines of code inside the function body are aligned:
+
+def my_function():
+    # code goes here
+    # code goes here
+    # code goes here
+6.
+Under the function definition (but above the final print statements), call calculate_variance() to find the variance of returns_disney and returns_cbs. Reassign the variables variance_disney and variance_cbs to store those values, respectively.
+
+Run the code! We should see that we get the same result as when we called the numpy function.
+
+
+Hint
+To reassign the value of a variable, simply use the = operator just like assigning any other variable.

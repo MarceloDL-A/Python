@@ -1,0 +1,97 @@
+CALCULATING FINANCIAL STATISTICS
+Aggregate Across Time II
+Now, let’s look at an extension of the previous conversion formula. Suppose we know the log rate of return for 5 days of a given year. Which daily log return would we use to calculate the annual return?
+
+In this case, we can first take the average of the 5 daily log returns, then multiple by 252, the number of trading days in a year. The general formula is:
+
+r = \frac{r_{0_1} + r_{0_2} + ... + r_{0_n}}{n} * tr= 
+n
+r 
+0 
+1
+?	 
+?	 +r 
+0 
+2
+?	 
+?	 +...+r 
+0 
+n
+?	 
+?	 
+?	 *t
+r: converted log rate of return
+r0n: the nth log return from the original time period
+n: the number of returns from the original time period
+t: the number of original time periods in the new time period
+Notice how if we only have one log return from the original time period, n equals to 1, and we can simplify the equation to obtain the conversion formula we saw in the previous exercise.
+
+On the other hand, if we know the log return for all 252 trading days, then n equals to t, and we will simply be summing up all the log returns across the new time period.
+
+r = r_{0_1} + r_{0_2} + ... + r_{0_t}r=r 
+0 
+1
+?	 
+?	 +r 
+0 
+2
+?	 
+?	 +...+r 
+0 
+t
+?	 
+?	 
+r: converted log rate of return
+r0n: the nth log return from the original time period
+t: the number of original time periods in the new time period
+Instructions
+1.
+You are provided with a list of 5 daily log returns from a given week in script.py. Write a function called convert_returns() that takes the following 2 parameters:
+
+log_returns: list of log rates of return from the original time period
+t: the number of original time periods in the new time period
+For now, just put return in the function body.
+
+
+Stuck? Get a hint
+2.
+Now, calculate the converted rate of return using the first formula provided in the narrative above and return the result.
+
+
+Hint
+Use Python’s built-in sum() and len() functions to find the average of the given list of returns. Then, multiply this value by the number of original time periods in the new time period.
+
+3.
+Use the function to find the annual rate of return from the list of daily returns and store the result in a variable called annual_return.
+
+Copy the following line to the text editor to print out the result:
+
+print('The annual rate of return is', display_as_percentage(annual_return))
+
+Hint
+There are 252 trading days in a typical year.
+
+The value returned from a function call can be stored in a variable using the syntax:
+
+my_variable = my_function(...)
+4.
+Now, let’s use the function to find the weekly rate of return from the list of daily returns and store the result in a variable called weekly_return.
+
+Copy the following line to the text editor to print out the result:
+
+print('The weekly rate of return is', display_as_percentage(weekly_return))
+
+Hint
+There are 5 trading days in a typical week.
+
+The value returned from a function call can be stored in a variable using the syntax:
+
+my_variable = my_function(...)
+5.
+Great! In this final checkpoint, we will demonstrate that log returns are additive over time. Since we are given the daily log return for all 5 trading days of the week, the rate of return for that given week is also equivalent to summing up all the daily returns in that period.
+
+Above your last print statement, reassign the variable weekly_return to be the sum of all values in the list of daily_returns, and run the code. You should see that you get the same result as calling convert_returns()!
+
+
+Hint
+Use Python’s built-in sum() function to find the sum of all values in a list.

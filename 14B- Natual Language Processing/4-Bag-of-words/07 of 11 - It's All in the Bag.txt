@@ -1,0 +1,35 @@
+BAG-OF-WORDS LANGUAGE MODEL
+It's All in the Bag
+Phew! That was a lot of work.
+
+It’s time to put create_features_dictionary() and tokens_to_bow_vector() together and use them in a spam filter we created that uses a Naive Bayes classifier. We’ve slightly modified the two functions for this use case, but they should still look familiar.
+
+Let’s see create_features_dictionary() and tokens_to_bow_vector() in action with real test data, helping fend off spam!
+
+Instructions
+1.
+Below tokens_to_bow_vector(), call create_features_dictionary() on training_doc_tokens and assign the result to bow_sms_dictionary.
+
+Checkpoint 2 Passed
+2.
+Define training_vectors as a list comprehension. The list comprehension should call tokens_to_bow_vector() on training_doc and bow_sms_dictionary for each training_doc in training_spam_docs.
+
+Checkpoint 3 Passed
+
+Hint
+You can call a function on each item in a list comprehension like this:
+
+some_list_comprehension = [some_function(item) for item in some_list]
+3.
+Define test_vectors as a list comprehension that calls tokens_to_bow_vector() on test_doc and bow_sms_dictionary for each test_doc in test_spam_docs.
+
+Checkpoint 4 Passed
+
+Hint
+You can call a function on each item in a list comprehension like this:
+
+some_list_comprehension = [some_function(item) for item in some_list]
+4.
+Ready? Get set! Uncomment the code at the bottom of script.py and run the code again!
+
+The Naive Bayes classifier was pretty darn accurate in determining which messages were spam by using your bag-of-words functions!

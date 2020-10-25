@@ -1,0 +1,33 @@
+BAG-OF-WORDS LANGUAGE MODEL
+BoW Wow
+As you can see, bag-of-words is pretty useful! BoW also has several advantages over other language models. For one, it’s an easier model to get started with and a few Python libraries already have built-in support for it.
+
+Because bag-of-words relies on single words, rather than sequences of words, there are more examples of each unit of language in the training corpus. More examples means the model has less data sparsity (i.e., it has more training knowledge to draw from) than other statistical models.
+
+Imagine you want to make a shirt to sell to people. If you have the shirt exactly tailored to someone’s body, it probably won’t fit that many people. But if you make a shirt that is just a giant bag with arm holes, you know that no one will buy it. What do you do? You loosely fit the shirt to someone’s body, leaving some extra room for different body shapes.
+
+Overfitting (adapting a model too strongly to training data, akin to our highly tailored shirt) is a common problem for statistical language models. While BoW still suffers from overfitting in terms of vocabulary, it overfits less than other statistical models, allowing for more flexibility in grammar and word choice.
+
+The combination of low data sparsity and less overfitting makes the bag-of-words model more reliable with smaller training data sets than other statistical models.
+
+Instructions
+1.
+The bigrams model is another statistical model that is helpful for tasks like text prediction. However, it’s not always ideal when you want to determine the topic of a given text.
+
+Read the short text in the code and then run the code as is to see the most common bigrams.
+
+Checkpoint 2 Passed
+
+Hint
+In case you were wondering, .most_common() is a method that Counter uses to select only the most frequent terms or word sequences.
+
+2.
+Because of data sparsity, each bigram only has a single occurrence. As a result, the bigram model alone is not great at making predictions about topic or sentiment. Let’s see how the bag-of-words model does…
+
+Define bag_of_words in the code editor as Counter() called on tokens.
+
+Checkpoint 3 Passed
+3.
+At the end of script.py, let’s print out the three most frequently occurring words in the text. You can find the most common words by calling the Counter method .most_common() on bag_of_words and passing in a number — in this case 3 — as an argument. Save the result to most_common_three and print the result.
+
+Can you tell what the topic is by looking at the bag of words model?

@@ -1,0 +1,49 @@
+TEXT PREPROCESSING
+Tokenization
+For many natural language processing tasks, we need access to each word in a string. To access each word, we first have to break the text into smaller components. The method for breaking text into smaller components is called tokenization and the individual components are called tokens.
+
+A few common operations that require tokenization include:
+
+Finding how many words or sentences appear in text
+Determining how many times a specific word or phrase exists
+Accounting for which terms are likely to co-occur
+While tokens are usually individual words or terms, they can also be sentences or other size pieces of text.
+
+To tokenize individual words, we can use nltk‘s word_tokenize() function. The function accepts a string and returns a list of words:
+
+from nltk.tokenize import word_tokenize
+
+text = "Tokenize this text"
+tokenized = word_tokenize(text)
+
+print(tokenized)
+# ["Tokenize", "this", "text"]
+To tokenize at the sentence level, we can use sent_tokenize() from the same module.
+
+from nltk.tokenize import sent_tokenize
+
+text = "Tokenize this sentence. Also, tokenize this sentence."
+tokenized = sent_tokenize(text)
+
+print(tokenized)
+# ['Tokenize this sentence.', 'Also, tokenize this sentence.']
+Instructions
+1.
+Import the word_tokenize() and sent_tokenize() functions from Python’s NLTK package.
+
+Checkpoint 2 Passed
+2.
+Tokenize ecg_text by word and save the result to tokenized_by_word.
+
+Checkpoint 3 Passed
+
+Hint
+Use word_tokenize to tokenize ecg_text and save the result to tokenized_by_word.
+
+3.
+Tokenize ecg_text by sentence and save the result to tokenized_by_sentence.
+
+Checkpoint 4 Passed
+
+Hint
+Use sent_tokenize to tokenize ecg_text and save the result to tokenized_by_sentence.

@@ -1,0 +1,72 @@
+CALCULATING FINANCIAL STATISTICS
+Aggregate Across Time I
+When describing the rate of return of an investment, something that is important to keep in mind is the time frame of the investment. For example, an investment with a 2% rate of return over one day is surely not the same as an investment with a 2% rate of return over one month. Thus, it is common to convert returns to a standard time period. Often, this means converting to the annual rate of return in a process called annualizing.
+
+As we’ve covered earlier, aggregating across time for a single asset can easily be calculated using the log rate of return.
+
+To convert a log rate of return from one time period to another, we can multiple the rate of return by the number of original time periods there are in the new time period.
+
+r = r_{0} * tr=r 
+0
+?	 *t
+r: converted log rate of return
+r0: original log rate of return
+t: the number of original time periods in the new time period
+For example, if we are converting daily returns to annual returns, t may be 252 because that is typically the number of trading days in a year. If we are converting monthly returns to annual returns, t would be 12.
+
+Instructions
+1.
+You are given the log rate of return for two investments - the daily return of Investment A and monthly return of Investment B. Print out the following strings:
+
+'The daily rate of return for Investment A is X%', where X% is daily_return_a expressed as a percentage.
+'The monthly rate of return for Investment B is X%', where X% is monthly_return_b expressed as a percentage.
+
+Hint
+Remember to use display_as_percentage() to format the values as percentages.
+
+2.
+It is difficult to compare daily returns with monthly returns. Let’s write a function to convert both to annual returns! Define a function called annualize_return() that has 2 parameters:
+
+log_return: original log rate of return
+t: the number of original time periods in the new time period
+For now, just put return in the function body.
+
+
+Hint
+A function can be defined with the following syntax:
+
+def my_function(input_1, input_2):
+    # code goes here
+3.
+Now, calculate the converted rate of return using the formula provided in the narrative above and return the result.
+
+
+Hint
+The function should return the product of log_return and t. In Python, multiplication can be done using the * operator.
+
+4.
+Use the function to annualize daily_return_a and store the result in a variable called annual_return_a.
+
+Print the string 'The annual rate of return for Investment A is X%', where X% is the annual_return_a expressed as a percentage.
+
+
+Hint
+There are 252 trading days in a typical year.
+
+The value returned from a function call can be stored in a variable using the syntax:
+
+my_variable = my_function(...)
+5.
+Use the function to annualize monthly_return_b and store the result in a variable called annual_return_b.
+
+Print the string 'The annual rate of return for Investment B is X%', where X% is the annual_return_b expressed as a percentage.
+
+How do the annual returns for Investments A and B compare?
+
+
+Hint
+There are 12 months in a year.
+
+The value returned from a function call can be stored in a variable using the syntax:
+
+my_variable = my_function(...)

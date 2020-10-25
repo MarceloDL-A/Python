@@ -1,0 +1,60 @@
+CALCULATING FINANCIAL STATISTICS
+Logarithmic Rate of Return
+Another type of return is the logarithmic rate of return, also known as the continuously compounded return. This is the expected return for an investment where the earnings are assumed to be continually reinvested over the time period. It is calculated by taking the difference between the log of the ending price and the log of the starting price.
+
+r = log(E) - log(S) = log(\frac{E}{S})r=log(E)-log(S)=log( 
+S
+E
+?	 )
+r: logarithmic rate of return
+S: starting price of investment
+E: ending price of investment
+The advantage of the log rate of return is that it is easy to make calculations about a single asset over time. On the other hand, calculating the simple rate of return is easier for dealing with multiple assets over the same time period.
+
+We will take a closer look at both of these in the subsequent exercises. But whichever type of return we choose to use, it is important to remember to be consistent in using the same one for any further financial calculations.
+
+Instructions
+1.
+First, import the log() function from the math module.
+
+
+Hint
+To import a function from a module, the syntax is:
+
+from module_name import function_name
+2.
+Define a function called calculate_log_return() that has 2 parameters:
+
+start_price: starting price of investment
+end_price: ending price of investment
+For now, just put return in the function body.
+
+
+Hint
+A function can be defined with the following syntax:
+
+def my_function(input_1, input_2, ...):
+    # code goes here
+3.
+Now, calculate the logarithmic rate of return using the formula provided in the narrative above and return the result.
+
+
+Hint
+We can call the log() function imported from the math module to calculate the log of a value.
+
+4.
+Call the function, passing in 200 as the start_price and 250 as the end_price, and store the result in a variable called log_return.
+
+
+Hint
+The value returned from a function call can be stored in a variable using the syntax:
+
+my_variable = my_function(...)
+5.
+Print the string 'The log rate of return is X%', where X% is the log_return expressed as a percentage.
+
+
+Hint
+Recall we can pass in multiple arguments to the print() function, and it will print each item separated by a space:
+
+print('The value formatted as a percentage is', display_as_percentage(my_value))
