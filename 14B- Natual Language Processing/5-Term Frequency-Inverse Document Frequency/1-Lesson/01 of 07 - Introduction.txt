@@ -1,0 +1,15 @@
+TERM FREQUENCY–INVERSE DOCUMENT FREQUENCY
+Introduction
+It’s a dark night in the middle of winter as you make your way through another of Emily Dickinson’s poems. As you grapple with questions of immortality and death, you notice the word choice in each poem you read. With each passing poem, you discover for yourself which words are common throughout her work, and which indicate more unique meaning in individual poems.
+
+You might not even realize, but you are building a language model in your head similar to term frequency-inverse document frequency, commonly known as tf-idf. Tf-idf is another powerful tool in your NLP toolkit that has a variety of use cases included:
+
+ranking results in a search engine
+text summarization
+building smarter chatbots
+Instructions
+The gif on the right showcases an example of applying tf-idf to a set of documents. The output of applying tf-idf is the table shown, also known as a term-document matrix. You can think of a term-document matrix like a matrix of bag-of-word vectors.
+
+Each column of the table represents a unique document (in this case, an individual sentence). Each row represents a unique word token. The value in each cell represents the tf-idf score for a word token in that particular document.
+
+Proceed to the next exercise to learn more about what tf-idf is and how you can calculate it!
