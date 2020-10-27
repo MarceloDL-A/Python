@@ -1,0 +1,54 @@
+TERM FREQUENCY–INVERSE DOCUMENT FREQUENCY
+Putting It All Together: Tf-idf
+Now that we understand how term frequency and inverse document frequency are calculated, let’s put it all together to calculate tf-idf!
+
+Tf-idf scores are calculated on a term-document basis. That means there is a tf-idf score for each word, for each document. The tf-idf score for some term t in a document d in some corpus is calculated as follows:
+
+tfidf(t,d) = tf(t,d)*idf(t,corpus)tfidf(t,d)=tf(t,d)*idf(t,corpus)
+tf(t,d) is the term frequency of term t in document d
+idf(t,corpus) is the inverse document frequency of a term t across corpus
+We can easily calculate the tf-idf values for each term-document pair in our corpus using scikit-learn’s TfidfVectorizer:
+
+vectorizer = TfidfVectorizer(norm=None)
+tfidf_vectorizer = vectorizer.fit_transform(corpus)
+a TfidfVectorizer object is initialized. The norm=None keyword argument prevents scikit-learn from modifying the multiplication of term frequency and inverse document frequency
+the TfidfVectorizer object is fit and transformed on the corpus of data, returning the tf-idf scores for each term-document pair
+Instructions
+1.
+The same selection of 6 Emily Dickinson poems from the previous exercise is given in poems.py.
+
+In script.py, the poems are preprocessed. Let’s calculate the tf-idf scores for each term-document pair.
+
+Begin by creating a TfidfVectorizer object named vectorizer with keyword argument norm=None.
+
+Checkpoint 2 Passed
+
+Hint
+You can create a TfidfVectorizer object as shown below:
+
+my_vectorizer = TfidfVectorizer(norm=None)
+2.
+Fit and transform your vectorizer on the corpus of preprocessed poems. Save the result to a variable named tfidf_scores.
+
+Checkpoint 3 Passed
+
+Hint
+You can calculate the tf-idf scores of a corpus by calling a TfidfVectorizer‘s .fit_transform() method as follows:
+
+my_tfidf_scores = my_vectorizer.fit_transform(corpus_of_documents)
+3.
+Like CountVectorizer objects, TfidfVectorizer objects have a .get_feature_names() method which returns a list of all the unique terms in the corpus.
+
+Paste the below line into the “get vocabulary of terms” section of script.py to display the tf-idf matrix.
+
+feature_names = vectorizer.get_feature_names()
+Which term-document pairs have the highest tf-idf scores?
+
+Checkpoint 4 Passed
+
+Hint
+Make sure to scroll down and to the right through the table to see the tf-idf scores for all term-document pairs.
+
+The highest tf-idf score 12.48 is for “and” in Poem 4. Maybe we should filter out stop words! Two of the next highest tf-idf scores are more interesting. “night” and “wild “in document 2 have tf-idf scores of 9.01 and 6.76, respectively.
+
+These scores indicate that Poem 2 may be about a “wild night”, and much more so than any of the other poems!

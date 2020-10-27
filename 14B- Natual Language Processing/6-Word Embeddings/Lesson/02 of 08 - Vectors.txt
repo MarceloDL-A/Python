@@ -1,0 +1,52 @@
+WORD EMBEDDINGS
+Vectors
+Vectors can be many things in many different fields, but ultimately they are containers of information. Depending on the size, or the dimension, of a vector, it can hold varying amounts of data.
+
+The simplest case is a 1-dimensional vector, which stores a single number. Say we want to represent the length of a word with a vector. We can do so as follows:
+
+"cat" ----> [3]
+"scrabble" ----> [8]
+"antidisestablishmentarianism" ----> [28]
+Instead of looking at these three words with our own eyes, we can compare the vectors that represent them by plotting the vectors on a number line.one-dimensional number line with vectorsWe can clearly see that the “cat” vector is much smaller than the “scrabble” vector, which is much smaller than the “antidisestablishmentarianism” vector.
+
+Now let’s say we also want to record the number of vowels in our words, in addition to the number of letters. We can do so using a 2-dimensional vector, where the first entry is the length of the word, and the second entry is the number of vowels:
+
+"cat" ----> [3, 1]
+"scrabble" ----> [8, 2]
+"antidisestablishmentarianism" ----> [28, 11]
+To help visualize these vectors, we can plot them on a two-dimensional grid, where the x-axis is the number of letters, and the y-axis is the number of vowels.two-dimensional grid with vectors
+
+Here we can see that the vectors for “cat” and “scrabble” point to a more similar area of the grid than the vector for “antidisestablishmentarianism”. So we could argue that “cat” and “scrabble” are closer together.
+
+While we have shown here only 1-dimensional and 2-dimensional vectors, we are able to have vectors in any number of dimensions. Even 1,000! The tricky part, however, is visualizing them.
+
+Vectors are useful since they help us summarize information about an object using numbers. Then, using the number representation, we can make comparisons between the vector representations of different objects!
+
+This idea is central to how word embeddings map words into vectors.
+
+We can easily represent vectors in Python using NumPy arrays. To create a vector containing the odd numbers from 1 to 9, we can use NumPy’s .array() method:
+
+odd_vector = np.array([1, 3, 5, 7, 9])
+Instructions
+1.
+Say you are working at a school and want to analyze student scores on the first two English exams of the semester. One student, Xavier, scored 88 on the first exam and 92 on the second. Another student, Niko, scored 94 on the first exam and 87 on the second.
+
+Create vectors using NumPy arrays called scores_xavier and scores_niko that contain the students’ exam scores. Make sure the first exam score is the first value in each vector!
+
+Checkpoint 2 Passed
+
+Hint
+To create a vector using NumPy, you can use the .array() method:
+
+my_vector = np.array(['green eggs', 'ham'])
+2.
+Take a look at the web browser component. You should see the two vectors representing Xavier’s and Niko’s exam scores plotted on a grid. What do you notice about the two vectors? Are they close together?
+
+A new student Alena transfers into your class from a different section. Alena scored 90 on the first exam but struggled on the second, scoring 48. Create a new vector named scores_alena containing her exam scores in the same section of script.py where you defined the other exam vectors. Where do you think the vector will point to? And how similar is the vector for Alena’s scores to Xavier’s and Niko’s?
+
+Checkpoint 3 Passed
+
+Hint
+The vectors for Xavier and Niko point in a similar direction and have similar lengths, indicating that the performance of the students on the exams is similar.
+
+The vector for Alena, however, points in a different direction than Xavier’s and Niko’s, indicating Alena’s overall performance on the exams is markedly different than her peers.

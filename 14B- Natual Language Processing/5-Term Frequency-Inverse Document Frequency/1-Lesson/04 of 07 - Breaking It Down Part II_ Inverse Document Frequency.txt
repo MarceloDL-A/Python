@@ -1,0 +1,68 @@
+TERM FREQUENCY–INVERSE DOCUMENT FREQUENCY
+Breaking It Down Part II: Inverse Document Frequency
+The inverse document frequency component of the tf-idf score penalizes terms that appear more frequently across a corpus. The intuition is that words that appear more frequently in the corpus give less insight into the topic or meaning of an individual document, and should thus be deprioritized.
+
+For example, terms like “the” or “go” are used all over the place, so in a bag-of-words model, they would be given priority even though they don’t provide much meaning; tf-idf would deprioritize these sorts of common words.
+
+We can calculate the inverse document frequency for some term t across a corpus using the below equation. Don’t be scared if you aren’t a math person!
+
+log(\frac{Total\ number\ of\ documents}{Number\ of\ documents\ with\ term\ t})log( 
+Number of documents with term t
+Total number of documents
+?	 )
+The important take away from the equation is that as the number of documents with the term t increases, the inverse document frequency decreases (due to the nature of the log function). The more frequently a term appears across the corpus, the less important it becomes to an individual document.
+
+Inverse document frequency can be calculated on a group of documents using scikit-learn’s TfidfTransformer:
+
+transformer = TfidfTransformer(norm=None)
+transformer.fit(term_frequencies)
+inverse_doc_frequency = transformer.idf_
+a TfidfTransformer object is initialized. Don’t worry about the norm=None keyword argument for now, we will dig into this in the next exercise
+the TfidfTransformer is fit (trained) on a term-document matrix of term frequencies
+the .idf_ attribute of the TfidfTransformer stores the inverse document frequencies of the terms as a NumPy array
+Instructions
+1.
+A selection of 6 Emily Dickinson poems is given in poems.py. The term frequencies of each term-document pair are calculated in term_frequency.py and stored in term_frequencies as a matrix and df_term_frequencies as a Pandas DataFrame.
+
+In script.py, print df_term_frequencies to view the term-document matrix of term frequencies.
+
+Checkpoint 2 Passed
+
+Stuck? Get a hint
+2.
+Let’s calculate the inverse document frequency for each term in the selection of Emily Dickinson’s poems! Begin by creating a TfidfTransformer object named transformer.
+
+
+Hint
+You can create a TfidfTransformer object as shown below:
+
+my_transformer = TfidfTransformer()
+3.
+Fit transformer on term_frequencies.
+
+
+Hint
+You can fit a TfidfTransformer object on a term frequency matrix as shown below:
+
+my_transformer.fit(term_frequencies_matrix)
+4.
+Store the calculated inverse document frequency values in a variable named idf_values.
+
+When you run the code, a table of inverse document frequency scores for all the terms will appear. Which terms are penalized for occurring across multiple documents?
+
+Refer back to the poems in poems.py to see the original poems.
+
+
+Hint
+You can access the calculated inverse document frequency values of a fitted TfidfTransformer object as shown below:
+
+my_idf_values = my_transformer.idf_
+“be” and “the” have the lowest inverse document frequency scores, as they appear in each of the poems. Terms that appear in only one of the 6 poems have the highest inverse document frequency score (2.2527...).
+
+If you are a math lover and have been calculating the inverse document frequency scores by hand, you will notice that the results provided by scikit-learn are different than the equation we have stated. This is because scikit-learn changes the inverse document frequency calculation slightly to the below equation:
+
+log(\frac{Total\ number\ of\ documents\ +\ 1}{Number\ of\ documents\ with\ term\ t\ +\ 1}) + 1log( 
+Number of documents with term t + 1
+Total number of documents + 1
+?	 )+1
+Reference the TfidfTransformer scikit-learn documentation here for more information.

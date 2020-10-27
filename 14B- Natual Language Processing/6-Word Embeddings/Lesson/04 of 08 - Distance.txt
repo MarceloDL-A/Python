@@ -1,0 +1,90 @@
+WORD EMBEDDINGS
+Distance
+The key at the heart of word embeddings is distance. Before we explain why, let’s dive into how the distance between vectors can be measured.
+
+There are a variety of ways to find the distance between vectors, and here we will cover three. The first is called Manhattan distance.
+
+In Manhattan distance, also known as city block distance, distance is defined as the sum of the differences across each individual dimension of the vectors. Consider the vectors [1,2,3] and [2,4,6]. We can calculate the Manhattan distance between them as shown below:
+
+manhattan\ distance\ =\ \left | 1-2 \right |+\left | 2-4 \right| +\left | 3-6 \right|=1+2+3=6manhattan distance = |1-2|+|2-4|+|3-6|=1+2+3=6
+Another common distance metric is called the Euclidean distance, also known as straight line distance. With this distance metric, we take the square root of the sum of the squares of the differences in each dimension.
+
+euclidean\ distance\ =\sqrt{(1-2)^{2})+(2-4)^{2})+(3-6)^{2})}=\sqrt{14}\approx 3.74euclidean distance = 
+(1-2) 
+2
+ )+(2-4) 
+2
+ )+(3-6) 
+2
+ )
+?	 = 
+14
+?	 ˜3.74
+The final distance we will consider is the cosine distance. Cosine distance is concerned with the angle between two vectors, rather than by looking at the distance between the points, or ends, of the vectors. Two vectors that point in the same direction have no angle between them, and have a cosine distance of 0. Two vectors that point in opposite directions, on the other hand, have a cosine distance of 1. We would show you the calculation, but we don’t want to scare you away! For the mathematically adventurous, you can read up on the calculation here.
+
+We can easily calculate the Manhattan, Euclidean, and cosine distances between vectors using helper functions from SciPy:
+
+from scipy.spatial.distance import cityblock, euclidean, cosine
+
+vector_a = np.array([1,2,3])
+vector_b = np.array([2,4,6])
+
+# Manhattan distance:
+manhattan_d = cityblock(vector_a,vector_b) # 6
+
+# Euclidean distance:
+euclidean_d = euclidean(vector_a,vector_b) # 3.74
+
+# Cosine distance:
+cosine_d = cosine(vector_a,vector_b) # 0.0
+When working with vectors that have a large number of dimensions, such as word embeddings, the distances calculated by Manhattan and Euclidean distance can become rather large. Thus, calculations using cosine distance are preferred!
+
+Instructions
+1.
+Provided in script.py are the three vectors from the previous exercise, happy_vec, sad_vec, and angry_vec. Use SciPy to compute the Manhattan distance for the following:
+
+between happy_vec and sad_vec, storing the result in a variable man_happy_sad
+between sad_vec and angry_vec, storing the result in a variable man_sad_angry
+Print man_happy_sad and man_sad_angry to the terminal.
+
+Which word embeddings are a greater distance apart according to Manhattan distance?
+
+Checkpoint 2 Passed
+
+Hint
+To calculate the Manhattan distance between two vectors using SciPy’s cityblock() function:
+
+manhattan_d = cityblock(vector_a, vector_b)
+According to Manhattan distance, the word embeddings for "sad" and "angry" are farther apart than the word embeddings for "happy" and "sad".
+
+2.
+Now use SciPy to compute the Euclidean distance between happy_vec and sad_vec, storing the result in a variable euc_happy_sad, as well as the Euclidean distance between sad_vec and angry_vec, storing the result in a variable euc_sad_angry.
+
+Print euc_happy_sad and euc_sad_angry to the terminal.
+
+Which word embeddings are a greater distance apart according to Euclidean distance?
+
+Checkpoint 3 Passed
+
+Hint
+To calculate the Euclidean distance between two vectors using SciPy’s euclidean() function:
+
+euclidean_d = euclidean(vector_a, vector_b)
+According to Euclidean distance, the word embeddings for "sad" and "angry" are farther apart than the word embeddings for "happy" and "sad".
+
+3.
+Next stop, cosine city! Use SciPy to compute the cosine distance between happy_vec and sad_vec, storing the result in a variable cos_happy_sad, as well as the cosine distance between sad_vec and angry_vec, storing the result in a variable cos_sad_angry.
+
+Print cos_happy_sad and cos_sad_angry to the terminal.
+
+Which word embeddings are further apart according to cosine distance? What else do you notice about the different distance metrics? Are the values similar between the different techniques on each pairing of vectors?
+
+Checkpoint 4 Passed
+
+Hint
+To calculate the cosine distance between two vectors using SciPy’s cosine() function:
+
+cosine_d = cosine(vector_a, vector_b)
+Like the other distance metrics, according to cosine distance the word embeddings for "sad" and "angry" are farther apart than the word embeddings for "happy" and "sad".
+
+The cosine distance values, however, remain low and bounded between 0 and 1, where the Manhattan and Euclidean distances are rather large (and continue to grow as more dimensions are added to a vector).

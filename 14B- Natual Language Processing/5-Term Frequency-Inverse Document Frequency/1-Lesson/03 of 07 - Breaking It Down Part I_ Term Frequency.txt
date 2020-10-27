@@ -1,0 +1,50 @@
+TERM FREQUENCY–INVERSE DOCUMENT FREQUENCY
+Breaking It Down Part I: Term Frequency
+The first component of tf-idf is term frequency, or how often a word appears in a document within the corpus.
+
+The value for the term frequency is the same as if applying the bag-of-words language model to a document. If you have previously studied bag-of-words, this will all be familiar! If not, have no fear.
+
+Term frequency indicates how often each word appears in the document. The intuition for including term frequency in the tf-idf calculation is that the more frequently a word appears in a single document, the more important that term is to the document.
+
+Consider the stanza from Emily Dickinson’s poem I’m Nobody! Who are you? below:
+
+stanza = '''I'm nobody! Who are you?
+Are you nobody, too?
+Then there's a pair of us — don't tell!
+They'd banish us, you know.'''
+The term frequency for “you” is 3, “nobody” is 2, “are” is 2, “us” is 2, and the rest of the terms have a frequency of 1. We can get a general sense of what this stanza is about by the most frequently used words.
+
+Term frequency can be calculated in Python using scikit-learn’s CountVectorizer, as shown below:
+
+vectorizer = CountVectorizer()
+
+term_frequencies = vectorizer.fit_transform([stanza])
+A CountVectorizer object is initialized
+The CountVectorizer object is fit (trained) and transformed (applied) on the corpus of data, returning the term frequencies for each term-document pair
+Instructions
+1.
+Provided in script.py is Emily Dickinson’s poem Success is counted sweetest, stored in the variable poem. Read through poem yourself and find the term-frequency of “clear”. Save your answer, as an integer, to a variable named clear_count.
+
+
+Hint
+The term “clear” appears once in the second stanza, "So **clear**, of victory," and once in the third stanza, "Break, agonized and **clear**!"
+
+The term-frequency for clear is thus 2.
+
+2.
+Reading through each word of a document to count how many times it appears isn’t too efficient.
+
+The code in script.py preprocesses the poem and then uses scikit-learn’s CountVectorizer to get the term-frequencies for all terms in poem. It’s currently missing one line of code to display the term-document matrix of term-frequencies.
+
+CountVectorizer objects have a .get_feature_names() method which returns a list of all the unique terms in the corpus.
+
+Paste the below line into the “get vocabulary of terms” section of script.py to display the term-frequencies matrix.
+
+feature_names = vectorizer.get_feature_names()
+Which term appears the most frequently?
+
+
+Hint
+Make sure to scroll down through the table to see the term frequency for all terms. “the” appears 4 times, “of” appears 3 times, and “clear”, “to”, and “who” appear 2 times.
+
+This could be a good case for stop word removal!

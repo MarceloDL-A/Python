@@ -1,0 +1,40 @@
+TERM FREQUENCY–INVERSE DOCUMENT FREQUENCY
+What is Tf-idf?
+Term frequency-inverse document frequency is a numerical statistic used to indicate how important a word is to each document in a collection of documents, or a corpus.
+
+When applying tf-idf to a corpus, each word is given a tf-idf score for each document, representing the relevance of that word to the particular document. A higher tf-idf score indicates a term is more important to the corresponding document.
+
+Tf-idf has many similarities with the bag-of-words language model, which if you recall is concerned with word count — how many times each word appears in a document.
+
+While tf-idf can be used in any situation bag-of-words can be used, there is a key difference in how it is calculated.
+
+Tf-idf relies on two different metrics in order to come up with an overall score:
+
+term frequency, or how often a word appears in a document. This is the same as bag-of-words’ word count.
+inverse document frequency, which is a measure of how often a word appears in the overall corpus. By penalizing the score of words that appear throughout a corpus, tf-idf can give better insight into how important a word is to a particular document of a corpus.
+We will dig into each component of tf-idf in the next two exercises.
+
+Instructions
+1.
+The code in script.py is used to apply tf-idf to a corpus of documents and display the scores as a DataFrame in the web browser component. The current code is incomplete, so the DataFrame is not yet appearing!
+
+Like with many natural language processing tasks, we must preprocess our text data before applying a technique. Paste the below line of code into the “preprocess documents” section of script.py to preprocess each document in the corpus. Then run the code.
+
+processed_corpus = [preprocess_text(doc) for doc in corpus]
+
+Hint
+Paste the following line of code beneath the “preprocess documents” comment in script.py:
+
+processed_corpus = [preprocess_text(doc) for doc in corpus]
+2.
+You should now see what is known as a term-document matrix in the browser. Each row of the table represents a term, and each column of the table represents a document. The value in each cell indicates the tf-idf score for each term-document pair.
+
+Try changing the text in document_1, document_2 and document_3 and re-running the code. How do the tf-idf values change?
+
+
+Hint
+Make sure to change the text of at least one document.
+
+If a term appears more frequently in a document, the tf-idf score for that term-document pair will go up.
+
+If a term appears in multiple documents, the tf-idf score for the term across all documents will go down.

@@ -1,0 +1,66 @@
+TERM FREQUENCY–INVERSE DOCUMENT FREQUENCY
+Review
+“Hope is the thing with feathers
+That perches in the soul
+And sings the tune without the words
+And never stops at all.”
+So goes Emily Dickinson’s poem Hope is the thing with feathers. And just as Emily proclaims, your hope and perseverance have taken you to the end of this lesson!
+
+Let’s recount all you have learned:
+
+Term frequency-inverse document frequency, known as tf-idf, is a numerical statistic used to indicate how important a word is to each document in a collection of documents
+tf-idf consists of two components, term frequency and inverse document frequency
+term frequency is how often a word appears in a document. This is the same as bag-of-words’ word count
+inverse document frequency is a measure of how often a word appears across all documents of a corpus
+tf-idf is calculated as the term frequency multiplied by the inverse document frequency
+term frequency, inverse document frequency, and tf-idf can be calculated in scikit-learn using the CountVectorizer, TfidfTransformer, and TfidfVectorizer objects, respectively
+Let’s practice what you’ve learned about tf-idf using the work of another poet with an inclination for the dreary.
+
+Instructions
+1.
+“Once upon a review exercise dreary…” begins Edgar Allen Poe’s The Raven (or so it almost does).
+
+We can use Poe’s classic poem to demonstrate another means of defining documents in a tf-idf analysis. Rather than use different poems as their own documents, we can consider each stanza of The Raven as its own document and try to gain insight into the meaning and insight of the individual stanzas.
+
+In raven.py The Raven is broken down to individual stanzas and stored in the_raven_stanzas.
+
+Print the_raven_stanzas[0] to view the first stanza.
+
+Checkpoint 2 Passed
+
+Hint
+Call print() with the_raven_stanzas[0] as an argument.
+
+print(the_raven_stanzas[0])
+2.
+In script.py the stanzas of the_raven_stanzas are preprocessed. Let’s calculate the tf-idf scores for each term-document pair.
+
+Begin by creating a TfidfVectorizer object named vectorizer with keyword argument norm=None.
+
+Checkpoint 3 Passed
+
+Hint
+You can create a TfidfVectorizer object as shown below:
+
+my_vectorizer = TfidfVectorizer(norm=None)
+3.
+Fit and transform your vectorizer on the corpus of preprocessed stanzas. Save the result to a variable named tfidf_scores.
+
+Checkpoint 4 Passed
+
+Hint
+You can calculate the tf-idf scores of a corpus by calling a TfidfVectorizer‘s .fit_transform() method as follows:
+
+my_tfidf_scores = my_vectorizer.fit_transform(corpus_of_documents)
+4.
+Now you just need to get the vocabulary of unique terms used in The Raven.
+
+Paste the below line into the “get vocabulary of terms” section of script.py to display the tf-idf matrix.
+
+feature_names = vectorizer.get_feature_names()
+Which stanzas share similarly high/low tf-idf scores for the same terms?
+
+Checkpoint 5 Passed
+
+Hint
+Make sure to scroll down and to the right through the table to see the tf-idf scores for all term-document (in this case term-stanza) pairs.

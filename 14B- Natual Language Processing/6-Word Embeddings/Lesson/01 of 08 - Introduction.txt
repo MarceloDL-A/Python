@@ -1,0 +1,27 @@
+WORD EMBEDDINGS
+Introduction
+There is a famous saying by German writer Johann Wolfgang von Goethe:
+
+"Tell me with whom you consort and I will tell you who you are..."
+Goethe’s assumption is that the people you spend time with each and every day are a reflection of who you are as a person. Would you agree?
+
+Now, what if we extend that same idea from people to words? Linguist John Rupert Firth took this step and came up with his own saying:
+
+"You shall know a word by the company it keeps."
+This idea that a word’s meaning can be understood by its context, or the words that surround it, is the basis for word embeddings. A word embedding is a representation of a word as a numeric vector, enabling us to compare and contrast how words are used and identify words that occur in similar contexts.
+
+The applications of word embeddings include:
+
+entity recognition in chatbots
+sentiment analysis
+syntax parsing
+Have little to no experience with vectors? Do not fear! We’ll break down word embeddings and how they relate to vectors, step-by-step, in the next few exercises with the help of the spaCy package. Let’s get started!
+
+Instructions
+In script.py we have loaded the spaCy package and processed a collection of words into word embeddings. We then compare the embeddings for two pairs:
+
+"summer" and "winter"
+"mustard" and "amazing"
+What do you notice about the distance between words with similar usages and words with very different usages?
+
+Uncomment some of the print statements at the bottom of the file and run the code to see what a word embedding looks like. Soon you will learn how to load, create, and compare word embeddings just like these!

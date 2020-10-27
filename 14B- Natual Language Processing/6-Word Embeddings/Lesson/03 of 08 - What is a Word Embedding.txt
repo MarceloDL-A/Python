@@ -1,0 +1,62 @@
+WORD EMBEDDINGS
+What is a Word Embedding?
+Now that you have an understanding of vectors, let’s jump back to word embeddings. Word embeddings are vector representations of a word.
+
+They allow us to take all the information that is stored in a word, like its meaning and its part of speech, and convert it into a numeric form that is more understandable to a computer.
+
+For example, we could look at a word embedding for the word “peace”.
+
+[5.2907305, -4.20267, 1.6989858, -1.422668, -1.500128, ...]
+Here “peace” is represented by a 96-dimension vector, with just the first five dimensions shown. Each dimension of the vector is capturing some information about how the word “peace” is used. We can also look at a word embedding for the word “war”:
+
+[7.2966490, -0.52887750, 0.97479630, -2.9508233, -3.3934135, ...]
+By converting the words “war” and “peace” into their numeric vector representations, we are able to have a computer more easily compare the vectors and understand their similarities and differences.
+
+We can load a basic English word embedding model using spaCy as follows:
+
+nlp = spacy.load('en')
+Note: the convention is to load spaCy models into a variable named nlp.
+
+To get the vector representation of a word, we call the model with the desired word as an argument and can use the .vector attribute.
+
+nlp('love').vector
+But how do we compare these vectors? And how do we arrive at these numeric representations?
+
+Instructions
+1.
+Load a word embedding model from spaCy, as demonstrated in the narrative above, into a variable named nlp.
+
+Checkpoint 2 Passed
+
+Hint
+To load the basic English word embedding model from spaCy:
+
+nlp = spacy.load('en')
+2.
+Use the loaded model to save the vector representation of the word “happy” into a variable named happy_vec, the vector representation of the word “sad” into a variable named sad_vec, and the vector representation of the word “angry” into a variable named angry_vec.
+
+Print happy_vec, sad_vec and angry_vec to the terminal.
+
+What do the vectors look like?
+
+Checkpoint 3 Passed
+
+Hint
+To access the vector representation of some word using spaCy:
+
+nlp = spacy.load("en")
+
+spectacular_vec = nlp("spectacular").vector
+3.
+How big are these word embeddings?
+
+Use Python’s len() function to find the length of any of the vectors you just defined, and save the result to a variable named vector_length.
+
+Print vector_length to the terminal to see how many dimensions the word embedding has!
+
+Checkpoint 4 Passed
+
+Hint
+To find the length of a NumPy vector using Python’s len() function:
+
+length = len(my_vector_here)

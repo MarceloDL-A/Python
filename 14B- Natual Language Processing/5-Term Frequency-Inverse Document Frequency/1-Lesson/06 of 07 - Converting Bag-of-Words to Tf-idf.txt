@@ -1,0 +1,42 @@
+TERM FREQUENCY–INVERSE DOCUMENT FREQUENCY
+Converting Bag-of-Words to Tf-idf
+In addition to directly calculating the tf-idf scores for a set of terms across a corpus, you can also convert a bag-of-words model you have already created into tf-idf scores.
+
+Scikit-learn’s TfidfTransformer is up to the task of converting your bag-of-words model to tf-idf. You begin by initializing a TfidfTransformer object.
+
+tf_idf_transformer = TfidfTransformer(norm=False)
+Given a bag-of-words matrix count_matrix, you can now multiply the term frequencies by their inverse document frequency to get the tf-idf scores as follows:
+
+tf_idf_scores = tfidf_transformer.fit_transform(count_matrix)
+This is very similar to how we calculated inverse document frequency, except this time we are fitting and transforming the TfidfTransformer to the term frequencies/bag-of-words vectors rather than just fitting the TfidfTransformer to them.
+
+Instructions
+1.
+Consider one last time the same selection of 6 Emily Dickinson poems given in poems.py. The term frequencies of each term-document pair are calculated in term_frequency.py and stored in bow_matrix as a matrix and df_bag_of_words as a Pandas DataFrame.
+
+In script.py, print df_bag_of_words to view the bag-of-words matrix (term-document matrix of term frequencies).
+
+Checkpoint 2 Passed
+
+Hint
+Call print() with df_bag_of_words as an argument:
+
+print(df_bag_of_words)
+2.
+Initialize a TfidfTransformer object named transformer with keyword argument norm=None.
+
+Checkpoint 3 Passed
+
+Hint
+You can create a TfidfTransformer object as shown below:
+
+my_vectorizer = TfidfTransformer(norm=None)
+3.
+Use transformer to fit and transform the bag-of-words matrix bow_matrix into tf-idf scores. Save your result to tfidf_scores.
+
+Checkpoint 4 Passed
+
+Hint
+You can transform a bag-of-words matrix into tf-idf scores using TfidfTransformer as follows:
+
+my_tf_idf_scores = my_transformer.fit_transform(my_bow_matrix)
